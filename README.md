@@ -198,7 +198,7 @@ SELECT
   DATE_TRUNC(reading_timestamp, MONTH) AS month,
   AVG(temperature) AS avg_temperature,
   AVG(humidity) AS avg_humidity,
-  AVG(rainfall) AS total_rainfall,
+  AVG(rainfall) AS avg_rainfall,
   AVG(wind_speed) AS avg_wind_speed
 FROM `your-project.weather_data.unified_weather`
 GROUP BY month
