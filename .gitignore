@@ -1,47 +1,60 @@
 ```
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfplan
+.terragrunt-cache/
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Environment
+.env
+.env.local
+*.env.*
+
 # Dependencies
-venv/
-.venv/
+node_modules/
+vendor/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/
+htmlcov/
+.coverage
+
+# Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 .Python
-.env
-.env.local
-.env.*
-
-# Build/dist artifacts
-build/
-dist/
+*.so
 *.egg-info/
+.eggs/
 
-# DBT specific
-dbt/target/
-dbt/logs/
-
-# Terraform specific
-.terraform/
-*.tfstate
-*.tfstate.backup
-*.tfvars
-
-# Test coverage
-.coverage
-htmlcov/
-.coverage.*
-
-# Logs
-*.log
-
-# Editor/IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.DS_Store
-Thumbs.db
+# Build artifacts
+dist/
+build/
+target/
+*.out
+*.exe
+*.dll
+*.so
+*.a
+*.class
 
 # Compressed files
 *.zip
@@ -62,8 +75,4 @@ Thumbs.db
 *.Z
 *.lz
 *.lzo
-*.tar.gz
-*.tar.bz2
-*.tar.xz
-*.tar.zst
 ```

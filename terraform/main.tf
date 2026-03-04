@@ -93,7 +93,7 @@ resource "google_bigquery_table" "raw_air_temperature" {
   ])
 
   time_partitioning {
-    type = "DAY"
+    type  = "DAY"
     field = "timestamp"
   }
 
@@ -144,7 +144,7 @@ resource "google_bigquery_table" "raw_relative_humidity" {
   ])
 
   time_partitioning {
-    type = "DAY"
+    type  = "DAY"
     field = "timestamp"
   }
 
@@ -195,7 +195,7 @@ resource "google_bigquery_table" "raw_rainfall" {
   ])
 
   time_partitioning {
-    type = "DAY"
+    type  = "DAY"
     field = "timestamp"
   }
 
@@ -246,7 +246,7 @@ resource "google_bigquery_table" "raw_wind_speed" {
   ])
 
   time_partitioning {
-    type = "DAY"
+    type  = "DAY"
     field = "timestamp"
   }
 
@@ -315,7 +315,7 @@ resource "google_bigquery_table" "unified_weather" {
   ])
 
   time_partitioning {
-    type = "DAY"
+    type  = "DAY"
     field = "reading_timestamp"
   }
 
