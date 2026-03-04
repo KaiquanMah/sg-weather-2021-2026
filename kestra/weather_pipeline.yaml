@@ -1,0 +1,195 @@
+id: weather-data-ingestion
+namespace: dataengineering.zoomcamp
+
+description: |
+  Ingests weather data from data.gov.sg APIs for the period Jan 2021 to Feb 2026
+  and loads it to BigQuery for visualization in Looker Studio.
+
+labels:
+  owner: data-engineering-zoomcamp
+  project: sg-weather-2021-2026
+
+inputs:
+  - name: start_date
+    type: STRING
+    defaults: "2021-01-01"
+    description: Start date for data ingestion (YYYY-MM-DD)
+  - name: end_date
+    type: STRING
+    defaults: "2026-02-28"
+    description: End date for data ingestion (YYYY-MM-DD)
+  - name: project_id
+    type: STRING
+    description: GCP Project ID
+  - name: dataset_id
+    type: STRING
+    defaults: "weather_data"
+    description: BigQuery Dataset ID
+  - name: bucket_name
+    type: STRING
+    description: GCS Bucket Name for raw data
+  - name: api_key
+    type: STRING
+    description: data.gov.sg API Key
+
+tasks:
+  - id: generate_date_range
+    type: io.kestra.plugin.core.flow.EachSequential
+    value: "{{ inputs.start_date }}"
+    tasks:
+      - id: parse_start_date
+        type: io.kestra.plugin.scripts.python.Script
+        taskRunner: 
+          type: Docker
+        docker:
+          image: python:3.10-slim
+        script: |
+          import os
+          from datetime import datetime, timedelta
+          
+          start = datetime.strptime('{{ inputs.start_date }}', '%Y-%m-%d')
+          end = datetime.strptime('{{ inputs.end_date }}', '%Y-%m-%d')
+          
+          dates = []
+          current = start
+          while current <= end:
+              dates.append(current.strftime('%Y-%m-%d'))
+              current += timedelta(days=1)
+          
+          print(f"Generated {len(dates)} dates")
+          # Write to output variable for next task
+          with open('dates.txt', 'w') as f:
+              f.write('\n'.join(dates))
+
+  - id: parallel_ingestion
+    type: io.kestra.plugin.core.flow.EachParallel
+    value: "{{ outputs.generate_date_range.items }}"
+    tasks:
+      - id: fetch_and_load_single_date
+        type: io.kestra.plugin.scripts.python.Script
+        taskRunner:
+          type: Docker
+        docker:
+          image: python:3.10-slim
+        volumes:
+          - /tmp:/tmp
+        script: |
+          # Install required packages
+          import subprocess
+          import sys
+          
+          def install_packages():
+              subprocess.check_call([sys.executable, "-m", "pip", "install", 
+                                   "requests", "pandas", "google-cloud-bigquery", 
+                                   "google-cloud-storage"])
+          
+          install_packages()
+          
+          import os
+          import sys
+          from datetime import datetime
+          
+          # Add current directory to path to import our modules
+          sys.path.insert(0, '/tmp')
+          
+          # Set environment variables
+          os.environ['GOOGLE_CLOUD_PROJECT'] = '{{ inputs.project_id }}'
+          os.environ['BIGQUERY_DATASET_ID'] = '{{ inputs.dataset_id }}'
+          os.environ['GCS_BUCKET_NAME'] = '{{ inputs.bucket_name }}'
+          os.environ['DATA_GOV_SG_API_KEY'] = '{{ inputs.api_key }}'
+          
+          # Import our modules after setting environment
+          from api_client import WeatherAPIClient
+          from loaders import DataLoader
+          
+          # Parse the date from the iteration value
+          date_str = '{{ taskrun.value }}'
+          date_obj = datetime.strptime(date_str, '%Y-%m-%d')
+          
+          print(f"Processing date: {date_str}")
+          
+          # Initialize clients
+          client = WeatherAPIClient()
+          loader = DataLoader()
+          
+          # Fetch data for the date
+          all_data = client.fetch_all_data_for_date(date_obj)
+          
+          # Load data to GCS and BigQuery
+          loader.load_weather_data(all_data, date_str)
+          
+          print(f"Successfully processed date: {date_str}")
+
+  - id: create_unified_view
+    type: io.kestra.plugin.gcp.bigquery.Query
+    sql: |
+      CREATE OR REPLACE TABLE `{{ inputs.project_id }}.{{ inputs.dataset_id }}.unified_weather` AS
+      
+      -- Combine all weather data into a single table
+      WITH temperature_data AS (
+        SELECT 
+          timestamp AS reading_timestamp,
+          station_id,
+          temperature,
+          NULL AS humidity,
+          NULL AS rainfall,
+          NULL AS wind_speed,
+          'temperature' AS reading_type,
+          ingest_timestamp
+        FROM `{{ inputs.project_id }}.{{ inputs.dataset_id }}.raw_air_temperature`
+      ),
+      
+      humidity_data AS (
+        SELECT 
+          timestamp AS reading_timestamp,
+          station_id,
+          NULL AS temperature,
+          humidity,
+          NULL AS rainfall,
+          NULL AS wind_speed,
+          'humidity' AS reading_type,
+          ingest_timestamp
+        FROM `{{ inputs.project_id }}.{{ inputs.dataset_id }}.raw_relative_humidity`
+      ),
+      
+      rainfall_data AS (
+        SELECT 
+          timestamp AS reading_timestamp,
+          station_id,
+          NULL AS temperature,
+          NULL AS humidity,
+          rainfall,
+          NULL AS wind_speed,
+          'rainfall' AS reading_type,
+          ingest_timestamp
+        FROM `{{ inputs.project_id }}.{{ inputs.dataset_id }}.raw_rainfall`
+      ),
+      
+      wind_speed_data AS (
+        SELECT 
+          timestamp AS reading_timestamp,
+          station_id,
+          NULL AS temperature,
+          NULL AS humidity,
+          NULL AS rainfall,
+          speed AS wind_speed,
+          'wind_speed' AS reading_type,
+          ingest_timestamp
+        FROM `{{ inputs.project_id }}.{{ inputs.dataset_id }}.raw_wind_speed`
+      )
+      
+      SELECT * FROM temperature_data
+      UNION ALL
+      SELECT * FROM humidity_data
+      UNION ALL
+      SELECT * FROM rainfall_data
+      UNION ALL
+      SELECT * FROM wind_speed_data;
+    store: false
+
+triggers:
+  - id: schedule_daily
+    type: io.kestra.plugin.core.trigger.Schedule
+    cron: "0 1 * * *"  # Run daily at 1 AM
+    disabled: true
+    description: "Optional: Schedule for daily incremental loads"

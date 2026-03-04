@@ -1,0 +1,92 @@
+version: 2
+
+sources:
+  - name: weather_data
+    description: Source tables for weather data from data.gov.sg APIs
+    database: "{{ env_var('DBT_PROJECT_ID') }}"  # Use environment variable for project ID
+    schema: weather_data
+    
+    tables:
+      - name: raw_air_temperature
+        description: Raw air temperature readings from data.gov.sg
+        columns:
+          - name: timestamp
+            description: Reading timestamp in SGT
+            tests:
+              - not_null
+              - unique
+          - name: station_id
+            description: Weather station ID
+            tests:
+              - not_null
+          - name: temperature
+            description: Air temperature in Celsius
+            tests:
+              - not_null
+          - name: unit
+            description: Unit of measurement
+          - name: ingest_timestamp
+            description: Timestamp when data was ingested
+
+      - name: raw_relative_humidity
+        description: Raw relative humidity readings from data.gov.sg
+        columns:
+          - name: timestamp
+            description: Reading timestamp in SGT
+            tests:
+              - not_null
+              - unique
+          - name: station_id
+            description: Weather station ID
+            tests:
+              - not_null
+          - name: humidity
+            description: Relative humidity percentage
+            tests:
+              - not_null
+          - name: unit
+            description: Unit of measurement
+          - name: ingest_timestamp
+            description: Timestamp when data was ingested
+
+      - name: raw_rainfall
+        description: Raw rainfall measurements from data.gov.sg
+        columns:
+          - name: timestamp
+            description: Reading timestamp in SGT
+            tests:
+              - not_null
+              - unique
+          - name: station_id
+            description: Weather station ID
+            tests:
+              - not_null
+          - name: rainfall
+            description: Rainfall amount in mm
+            tests:
+              - not_null
+          - name: unit
+            description: Unit of measurement
+          - name: ingest_timestamp
+            description: Timestamp when data was ingested
+
+      - name: raw_wind_speed
+        description: Raw wind speed measurements from data.gov.sg
+        columns:
+          - name: timestamp
+            description: Reading timestamp in SGT
+            tests:
+              - not_null
+              - unique
+          - name: station_id
+            description: Weather station ID
+            tests:
+              - not_null
+          - name: speed
+            description: Wind speed in knots
+            tests:
+              - not_null
+          - name: unit
+            description: Unit of measurement
+          - name: ingest_timestamp
+            description: Timestamp when data was ingested
