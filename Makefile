@@ -1,3 +1,13 @@
+# Load environment variables from .env file if it exists
+ifneq ($(wildcard .env),)
+    include .env
+    # Remove quotes from variables
+    PROJECT_ID := $(strip $(PROJECT_ID))
+    PROJECT_ID := $(subst ",,$(PROJECT_ID))
+    REGION := $(strip $(REGION))
+    REGION := $(subst ",,$(REGION))
+endif
+
 .PHONY: help install test lint terraform-init terraform-plan terraform-apply terraform-destroy run-ingestion
 
 # Display help message
@@ -30,17 +40,29 @@ terraform-init:
 	cd terraform && terraform init
 
 terraform-plan:
+	@if [ -z "$(PROJECT_ID)" ]; then \
+		echo "Error: PROJECT_ID is not set. Usage: make terraform-plan PROJECT_ID=your-project-id"; \
+		exit 1; \
+	fi
 	cd terraform && terraform plan \
 		-var="project_id=$(PROJECT_ID)" \
 		-var="region=$(REGION)"
 
 terraform-apply:
+	@if [ -z "$(PROJECT_ID)" ]; then \
+		echo "Error: PROJECT_ID is not set. Usage: make terraform-apply PROJECT_ID=your-project-id"; \
+		exit 1; \
+	fi
 	cd terraform && terraform apply \
 		-var="project_id=$(PROJECT_ID)" \
 		-var="region=$(REGION)" \
 		-auto-approve
 
 terraform-destroy:
+	@if [ -z "$(PROJECT_ID)" ]; then \
+		echo "Error: PROJECT_ID is not set. Usage: make terraform-destroy PROJECT_ID=your-project-id"; \
+		exit 1; \
+	fi
 	cd terraform && terraform destroy \
 		-var="project_id=$(PROJECT_ID)" \
 		-var="region=$(REGION)" \
