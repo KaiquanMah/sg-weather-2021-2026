@@ -1,4 +1,3 @@
-```gitignore
 # Compiled and build artifacts
 *.pyc
 __pycache__/
@@ -69,4 +68,3 @@ target/
 .gradle/
 .mypy_cache/
 .pytest_cache/
-```
