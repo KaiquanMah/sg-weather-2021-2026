@@ -11,11 +11,11 @@ class TestDataLoader(unittest.TestCase):
         Config.DATASET_ID = "test_dataset"
         Config.BUCKET_NAME = "test-bucket"
         
-        self.loader = DataLoader()
+        # Create mock clients
+        mock_bq_client = Mock()
+        mock_storage_client = Mock()
         
-        # Replace the actual clients with mocks
-        self.loader.client = Mock()
-        self.loader.storage_client = Mock()
+        self.loader = DataLoader(bq_client=mock_bq_client, storage_client=mock_storage_client)
 
     @patch('scripts.loaders.pd.DataFrame')
     @patch('scripts.loaders.storage.Client')
@@ -45,6 +45,7 @@ class TestDataLoader(unittest.TestCase):
         # Arrange
         test_data = [{"timestamp": "2023-01-01T00:00:00", "station_id": "S01", "temperature": 25.0}]
         mock_df_instance = Mock()
+        mock_df_instance.columns = ['timestamp', 'station_id', 'temperature', 'ingest_timestamp']
         mock_df.return_value = mock_df_instance
         mock_job = Mock()
         self.loader.client.load_table_from_dataframe.return_value = mock_job

@@ -2,7 +2,7 @@ import requests
 import time
 import logging
 from typing import Dict, List, Optional
-from config import Config
+from scripts.config import Config
 from datetime import datetime
 
 # Set up logging

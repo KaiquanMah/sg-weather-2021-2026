@@ -3,16 +3,16 @@ from google.cloud import bigquery, storage
 import logging
 from typing import Dict, List
 import json
-from config import Config
+from scripts.config import Config
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class DataLoader:
-    def __init__(self):
-        self.client = bigquery.Client(project=Config.PROJECT_ID)
-        self.storage_client = storage.Client(project=Config.PROJECT_ID)
+    def __init__(self, bq_client=None, storage_client=None):
+        self.client = bq_client or bigquery.Client(project=Config.PROJECT_ID)
+        self.storage_client = storage_client or storage.Client(project=Config.PROJECT_ID)
         self.dataset_id = Config.DATASET_ID
         self.bucket_name = Config.BUCKET_NAME
         self.batch_size = Config.BATCH_SIZE
