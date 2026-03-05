@@ -3,6 +3,13 @@
 *.tmp
 *.swp
 
+# Terraform state and provider cache
+.terraform/
+*.tfstate
+*.tfstate.*
+.crash_log
+
+
 # Environment
 .env
 .env.local
