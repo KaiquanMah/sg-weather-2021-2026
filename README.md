@@ -73,6 +73,52 @@ Or manually:
 pip install -r requirements.txt
 ```
 
+then install terraform - failed in GitHub Codespace
+```bash
+# Install prerequisites
+sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
+
+# Add the HashiCorp GPG key:
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+
+# Add the HashiCorp repository:
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+
+# Install Terraform:
+sudo apt update && sudo apt install -y terraform
+
+# verify terraform has been installed
+terraform version
+```
+
+Install Terraform via Direct Binary Download
+```bash
+# Set the Terraform version you want (check latest: https://www.terraform.io/downloads.html)
+TERRAFORM_VERSION="1.9.0"
+
+# Download the zip file
+curl -O "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip"
+
+# Install unzip if not present
+sudo apt-get install -y unzip
+
+# Extract ONLY the terraform binary directly to /usr/local/bin
+unzip -j "terraform_${TERRAFORM_VERSION}_linux_amd64.zip" terraform -d /tmp/
+sudo mv /tmp/terraform /usr/local/bin/
+sudo chmod +x /usr/local/bin/terraform
+
+# Clean up
+rm "terraform_${TERRAFORM_VERSION}_linux_amd64.zip"
+
+# Verify
+terraform version
+# Terraform v1.9.0
+# on linux_amd64
+# Your version of Terraform is out of date! The latest version
+# is 1.14.6. You can update by downloading from https://www.terraform.io/downloads.html
+```
+
+
 ### 4. Provision Infrastructure
 
 ```bash
