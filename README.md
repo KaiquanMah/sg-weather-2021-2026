@@ -36,65 +36,265 @@ graph LR
 
 - GCP project with billing enabled
 - data.gov.sg API key (sign up [here](https://data.gov.sg))
-- Python 3.9+
+- Python 3.11
 - Terraform v1.5+
+- Git
 
 ## Quick Start
 
-1. Clone repo:
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourname/sg-weather-2021-2026.git
+cd sg-weather-2021-2026
+```
+
+### 2. Set Environment Variables
+
+Create a `.env` file or export these variables:
+
+```bash
+export GOOGLE_CLOUD_PROJECT="your-gcp-project-id"
+export DATA_GOV_SG_API_KEY="your-api-key"
+export PROJECT_ID="your-gcp-project-id"
+export REGION="asia-southeast1"  # or your preferred region
+export BIGQUERY_DATASET_ID="weather_data"
+export GCS_BUCKET_NAME="your-bucket-name"
+```
+
+### 3. Install Dependencies
+
+```bash
+make install
+```
+
+Or manually:
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Provision Infrastructure
+
+```bash
+make terraform-init
+make terraform-plan
+make terraform-apply
+```
+
+### 5. Run the Ingestion Pipeline
+
+For the full date range (Jan 2021 - Feb 2026):
+```bash
+make run-ingestion
+```
+
+For a single date:
+```bash
+make run-single-date DATE=2024-01-15
+```
+
+## Development Workflow
+
+### Step-by-Step Guide
+
+#### Step 1: Local Development Setup
+
+1. **Clone and navigate to the project:**
    ```bash
    git clone https://github.com/yourname/sg-weather-2021-2026.git
    cd sg-weather-2021-2026
    ```
 
-2. Set environment variables:
+2. **Create a virtual environment (recommended):**
    ```bash
-   export GOOGLE_CLOUD_PROJECT="your-gcp-project-id"
-   export DATA_GOV_SG_API_KEY="your-api-key"
-   export PROJECT_ID="your-gcp-project-id"
-   export REGION="asia-southeast1"  # or your preferred region
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
-3. Install dependencies:
+3. **Install dependencies:**
    ```bash
    make install
    ```
 
-4. Provision infrastructure:
+4. **Set up environment variables:**
+   Create a `.env` file in the root directory:
+   ```bash
+   GOOGLE_CLOUD_PROJECT=your-project-id
+   DATA_GOV_SG_API_KEY=your-api-key
+   PROJECT_ID=your-project-id
+   REGION=asia-southeast1
+   BIGQUERY_DATASET_ID=weather_data
+   GCS_BUCKET_NAME=your-bucket-name
+   ```
+
+#### Step 2: Understanding the Code Structure
+
+The project follows a modular architecture:
+
+```
+scripts/
+├── config.py      # Configuration settings (API endpoints, GCP settings, rate limits)
+├── api_client.py  # Handles API requests with retry logic and pagination
+├── loaders.py     # Manages data loading to GCS and BigQuery
+└── ingest.py      # Main orchestration script that ties everything together
+
+tests/
+├── test_api_client.py  # Unit tests for API client
+└── test_loaders.py     # Unit tests for data loaders
+
+terraform/
+├── main.tf      # GCP infrastructure (BigQuery, GCS)
+├── variables.tf # Input variables
+└── outputs.tf   # Output values
+
+kestra/
+└── weather_pipeline.yaml  # Workflow orchestration definition
+
+dbt/
+├── dbt_project.yml       # dbt project configuration
+├── sources.yml           # Source definitions
+└── models/               # Transformation models
+```
+
+#### Step 3: Running Tests
+
+Before making any changes, ensure all tests pass:
+
+```bash
+make test
+```
+
+This runs pytest on all test files. The tests use mocking to avoid actual API calls and GCP resource usage.
+
+**Test coverage:**
+- `test_api_client.py`: Tests API request handling, rate limiting, pagination, and error cases
+- `test_loaders.py`: Tests GCS uploads, BigQuery loads, and data transformations
+
+#### Step 4: Making Code Changes
+
+1. **Create a new branch:**
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+2. **Make your changes** in the appropriate module:
+   - Modify `config.py` for configuration changes
+   - Update `api_client.py` for API interaction logic
+   - Change `loaders.py` for data loading transformations
+   - Edit `ingest.py` for workflow orchestration
+
+3. **Run tests after each change:**
+   ```bash
+   make test
+   ```
+
+4. **Lint your code:**
+   ```bash
+   make lint
+   ```
+
+#### Step 5: Testing Locally
+
+1. **Test with a single date first:**
+   ```bash
+   python -c "from scripts.ingest import run_single_date; run_single_date('2024-01-15')"
+   ```
+
+2. **Check logs** for any errors or warnings
+
+3. **Verify data in GCS and BigQuery:**
+   ```bash
+   # Check GCS bucket
+   gsutil ls gs://your-bucket-name/raw/
+   
+   # Query BigQuery
+   bq query --use_legacy_sql=false "SELECT COUNT(*) FROM \`your-project.weather_data.raw_air_temperature\`"
+   ```
+
+#### Step 6: Deploying Infrastructure
+
+1. **Initialize Terraform:**
    ```bash
    make terraform-init
+   ```
+
+2. **Review the plan:**
+   ```bash
    make terraform-plan
+   ```
+
+3. **Apply changes:**
+   ```bash
    make terraform-apply
    ```
 
-5. Run the ingestion pipeline:
-   ```bash
-   make run-ingestion
+#### Step 7: Running the Full Pipeline
+
+Once infrastructure is ready and tests pass:
+
+```bash
+make run-ingestion
+```
+
+This will process all dates from Jan 2021 to Feb 2026. Monitor the logs for progress.
+
+#### Step 8: CI/CD Integration
+
+The project uses GitHub Actions for continuous integration:
+
+- **On push/PR:** Runs tests and linting on Python 3.11
+- **Terraform validation:** Checks TF syntax and formatting
+
+To trigger CI:
+1. Commit your changes: `git commit -m "Description"`
+2. Push to your branch: `git push origin feature/your-feature-name`
+3. Create a pull request
+
+#### Step 9: Orchestration with Kestra
+
+For production workflows, use Kestra:
+
+1. **Deploy Kestra** to your environment
+2. **Update** `kestra/weather_pipeline.yaml` with your project details
+3. **Import** the workflow into Kestra UI
+4. **Schedule** or manually trigger the pipeline
+
+### Common Development Tasks
+
+#### Adding a New Weather Metric
+
+1. Add the endpoint to `Config.API_ENDPOINTS` in `config.py`
+2. Update the table mapping in `loaders.py`
+3. Add transformation logic in `_transform_data()` method
+4. Create corresponding tests in `test_loaders.py`
+5. Update dbt models if needed
+
+#### Modifying Rate Limits
+
+Edit these values in `config.py`:
+```python
+REQUEST_DELAY = 1.5  # seconds between API requests
+MAX_RETRIES = 3
+RETRY_DELAY = 2  # seconds between retries
+```
+
+#### Debugging Issues
+
+1. **Enable verbose logging:**
+   Add `logging.basicConfig(level=logging.DEBUG)` in your script
+
+2. **Test API connectivity:**
+   ```python
+   from scripts.api_client import WeatherAPIClient
+   client = WeatherAPIClient()
+   data = client.fetch_data_for_date("air-temperature", datetime(2024, 1, 15))
+   print(f"Fetched {len(data)} records")
    ```
 
-## Project Structure
-
-```
-├── README.md                  # Project overview and instructions
-├── requirements.txt           # Python dependencies
-├── Makefile                   # Convenient commands
-├── terraform/                 # Infrastructure as Code
-│   ├── main.tf               # Main infrastructure definitions
-│   ├── variables.tf          # Input variables
-│   └── outputs.tf            # Output values
-├── scripts/                  # Data ingestion scripts
-│   ├── config.py             # Configuration settings
-│   ├── api_client.py         # API interaction logic
-│   ├── loaders.py            # GCS/BigQuery loading logic
-│   └── ingest.py             # Main ingestion workflow
-├── kestra/                   # Workflow orchestration
-│   └── weather_pipeline.yaml # Kestra workflow definition
-├── tests/                    # Unit tests
-│   ├── test_api_client.py    # Tests for API client
-│   └── test_loaders.py       # Tests for data loaders
-└── .github/workflows/        # CI/CD pipeline
-    └── ci.yml                # GitHub Actions workflow
-```
+3. **Check GCP credentials:**
+   ```bash
+   gcloud auth application-default login
+   ```
 
 ## Testing
 
@@ -223,13 +423,65 @@ ORDER BY reading_count DESC
 - GCS: ~$0.02/GB/month for raw Parquet files
 - Total estimated monthly cost: Under $10 for typical usage
 
-## Development Guidelines
+## Troubleshooting
 
-- All infrastructure is defined as code in the `terraform/` directory
-- Tests are located in the `tests/` directory and can be run with `make test`
-- The ingestion pipeline follows a modular design with separate components for API interaction, data loading, and orchestration
-- All sensitive configuration is handled through environment variables
-- Code follows PEP 8 style guidelines and can be validated with `make lint`
-- The project includes a CI/CD pipeline defined in `.github/workflows/ci.yml` that runs tests and validates Terraform configuration
-- Data transformations are implemented using dbt for maintainability and documentation
-- Error handling and retry logic are implemented for robust operation during API rate limits or temporary failures
+### Common Issues and Solutions
+
+#### ModuleNotFoundError: No module named 'config'
+Ensure you're running scripts from the project root directory and using the correct import paths:
+```python
+from scripts.config import Config  # Correct
+from config import Config  # Incorrect - will fail in tests
+```
+
+#### API Rate Limiting (HTTP 429)
+The pipeline automatically retries with exponential backoff. If issues persist:
+1. Increase `REQUEST_DELAY` in `config.py`
+2. Reduce parallel workers in Kestra
+
+#### GCP Authentication Errors
+```bash
+# Re-authenticate
+gcloud auth application-default login
+
+# Verify credentials
+gcloud auth application-default print-access-token
+```
+
+#### Terraform State Issues
+```bash
+# Refresh state
+cd terraform && terraform refresh
+
+# Import existing resources
+terraform import <resource_type>.<resource_name> <resource_id>
+```
+
+#### Tests Failing
+```bash
+# Clear pytest cache
+rm -rf .pytest_cache __pycache__
+
+# Run tests with verbose output
+python -m pytest tests/ -v -s
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes and write tests
+4. Ensure all tests pass (`make test`)
+5. Lint your code (`make lint`)
+6. Commit your changes (`git commit -m 'Add amazing feature'`)
+7. Push to the branch (`git push origin feature/amazing-feature`)
+8. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Data provided by [data.gov.sg](https://data.gov.sg)
+- Built as part of the Data Engineering Zoomcamp 2026
