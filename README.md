@@ -284,12 +284,11 @@ RETRY_DELAY = 2  # seconds between retries
    Add `logging.basicConfig(level=logging.DEBUG)` in your script
 
 2. **Test API connectivity:**
-   ```python
-   from scripts.api_client import WeatherAPIClient
-   client = WeatherAPIClient()
-   data = client.fetch_data_for_date("air-temperature", datetime(2024, 1, 15))
-   print(f"Fetched {len(data)} records")
-   ```
+from datetime import datetime
+from scripts.api_client import WeatherAPIClient
+client = WeatherAPIClient()
+data = client.fetch_data_for_date("air-temperature", datetime(2024, 1, 15))
+print(f"Fetched {len(data)} records")
 
 3. **Check GCP credentials:**
    ```bash
