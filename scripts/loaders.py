@@ -56,7 +56,13 @@ class DataLoader:
         
         # Add ingestion timestamp if not present
         if 'ingest_timestamp' not in df.columns:
-            df['ingest_timestamp'] = pd.Timestamp.utcnow().strftime('%Y-%m-%dT%H:%M:%S.%fZ')
+            df['ingest_timestamp'] = pd.Timestamp.now(tz='Asia/Singapore').isoformat()
+            
+        # Ensure timestamp columns are properly typed for pyarrow/BigQuery
+        if 'timestamp' in df.columns:
+            df['timestamp'] = pd.to_datetime(df['timestamp'])
+        if 'ingest_timestamp' in df.columns:
+            df['ingest_timestamp'] = pd.to_datetime(df['ingest_timestamp'])
         
         # Load to BigQuery
         job_config = bigquery.LoadJobConfig(
