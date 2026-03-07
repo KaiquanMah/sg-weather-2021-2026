@@ -6,7 +6,17 @@ ifneq ($(wildcard .env),)
     PROJECT_ID := $(subst ",,$(PROJECT_ID))
     REGION := $(strip $(REGION))
     REGION := $(subst ",,$(REGION))
+	# ADD THESE 2 LINES — strip quotes from the credentials path
+    GOOGLE_APPLICATION_CREDENTIALS := $(strip $(GOOGLE_APPLICATION_CREDENTIALS))
+    GOOGLE_APPLICATION_CREDENTIALS := $(subst ",,$(GOOGLE_APPLICATION_CREDENTIALS))
+
+
 endif
+
+# ADD THIS LINE — export so Terraform sees it as a real shell env var
+export GOOGLE_APPLICATION_CREDENTIALS
+
+
 
 .PHONY: help install test lint terraform-init terraform-plan terraform-apply terraform-destroy run-ingestion
 
