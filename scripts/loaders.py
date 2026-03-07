@@ -3,6 +3,7 @@ from google.cloud import bigquery, storage
 import logging
 from typing import Dict, List
 import json
+import concurrent.futures
 # from scripts.config import Config
 from config import Config
 
@@ -69,8 +70,32 @@ class DataLoader:
         logger.info(f"Loaded {len(data)} records to {self.dataset_id}.{table_name}")
         return len(data)
 
+    def _process_single_endpoint(self, endpoint: str, data: List[Dict], date_str: str, table_mapping: Dict[str, str]) -> int:
+        """Process and load data for a single endpoint"""
+        try:
+            # Transform data based on endpoint type
+            transformed_data = self._transform_data(data, endpoint)
+            
+            # Get target table name
+            table_name = table_mapping.get(endpoint)
+            if not table_name:
+                logger.warning(f"Unknown endpoint: {endpoint}, skipping")
+                return 0
+            
+            # Save raw data to GCS
+            gcs_filename = f"{endpoint}/{date_str}"
+            self.save_to_gcs(data, gcs_filename)
+            
+            # Load transformed data to BigQuery
+            records_loaded = self.load_to_bigquery(transformed_data, table_name)
+            logger.info(f"Completed loading {records_loaded} records for {endpoint}")
+            return records_loaded
+        except Exception as e:
+            logger.error(f"Error processing {endpoint} data for {date_str}: {e}")
+            return 0
+
     def load_weather_data(self, all_data: Dict[str, List[Dict]], date_str: str):
-        """Load weather data to appropriate BigQuery tables"""
+        """Load weather data to appropriate BigQuery tables in parallel"""
         table_mapping = {
             "air-temperature": "raw_air_temperature",
             "relative-humidity": "raw_relative_humidity", 
@@ -79,29 +104,19 @@ class DataLoader:
         }
         
         total_loaded = 0
+        endpoints_with_data = [(ep, data) for ep, data in all_data.items() if data]
         
-        for endpoint, data in all_data.items():
-            if not data:
-                continue
-                
-            # Transform data based on endpoint type
-            transformed_data = self._transform_data(data, endpoint)
-            
-            # Get target table name
-            table_name = table_mapping.get(endpoint)
-            if not table_name:
-                logger.warning(f"Unknown endpoint: {endpoint}, skipping")
-                continue
-            
-            # Save raw data to GCS
-            gcs_filename = f"{endpoint}/{date_str}"
-            self.save_to_gcs(data, gcs_filename)
-            
-            # Load transformed data to BigQuery
-            records_loaded = self.load_to_bigquery(transformed_data, table_name)
-            total_loaded += records_loaded
-            
-            logger.info(f"Completed loading {records_loaded} records for {endpoint}")
+        if not endpoints_with_data:
+            logger.info("No data to load for any endpoint.")
+            return
+
+        with concurrent.futures.ThreadPoolExecutor(max_workers=len(endpoints_with_data)) as executor:
+            futures = [
+                executor.submit(self._process_single_endpoint, endpoint, data, date_str, table_mapping)
+                for endpoint, data in endpoints_with_data
+            ]
+            for future in concurrent.futures.as_completed(futures):
+                total_loaded += future.result()
         
         logger.info(f"Total records loaded: {total_loaded}")
         

@@ -5,6 +5,7 @@ from typing import Dict, List, Optional
 # from scripts.config import Config
 from config import Config
 from datetime import datetime
+import concurrent.futures
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -94,28 +95,6 @@ class WeatherAPIClient:
         
         # Add metadata to each reading
         processed_readings = []
-        # for reading in readings:
-        #     processed_reading = {
-        #         "timestamp": reading.get("timestamp"),
-        #         "station_id": reading.get("stationId"),
-        #         "value": reading.get("value"),
-        #         "date": date_str,
-        #         "endpoint": endpoint,
-        #         "ingest_timestamp": datetime.utcnow().isoformat()
-        #     }
-        #     processed_readings.append(processed_reading)
-
-        # to fix ingestion error
-        # eg from API specs
-        # "readings": [
-        #                 {
-        #                     "timestamp": "2024-07-16T15:59:00.000Z",
-        #                     "data": [                    // ← ARRAY of station readings
-        #                     {"stationId": "S108", "value": 29},
-        #                     {"stationId": "S109", "value": 30}
-        #                     ]
-        #                 }
-        #             ]
         for reading in readings:
             timestamp = reading.get("timestamp")
 
@@ -131,24 +110,27 @@ class WeatherAPIClient:
 
                 processed_readings.append(processed_reading)
 
-
-
-
         # Add delay to respect rate limits
         time.sleep(self.request_delay)
         
         return processed_readings
 
     def fetch_all_data_for_date(self, date: datetime) -> Dict[str, List[Dict]]:
-        """Fetch data from all endpoints for a specific date"""
+        """Fetch data from all endpoints for a specific date in parallel"""
         all_data = {}
         
-        for endpoint in Config.API_ENDPOINTS:
+        def fetch_wrapper(endpoint):
             try:
                 data = self.fetch_data_for_date(endpoint, date)
-                all_data[endpoint] = data
+                return endpoint, data
             except Exception as e:
                 logger.error(f"Error fetching data for {endpoint} on {date.strftime('%Y-%m-%d')}: {e}")
-                all_data[endpoint] = []
-        
+                return endpoint, []
+
+        with concurrent.futures.ThreadPoolExecutor(max_workers=len(Config.API_ENDPOINTS)) as executor:
+            future_to_endpoint = {executor.submit(fetch_wrapper, ep): ep for ep in Config.API_ENDPOINTS}
+            for future in concurrent.futures.as_completed(future_to_endpoint):
+                endpoint, data = future.result()
+                all_data[endpoint] = data
+                
         return all_data

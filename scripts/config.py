@@ -40,7 +40,7 @@ class Config:
     # END_DATE = datetime(2026, 2, 28)
     
     # GCP Configuration
-    PROJECT_ID = os.getenv("GOOGLE_CLOUD_PROJECT", "")
+    PROJECT_ID = os.getenv("PROJECT_ID", os.getenv("GOOGLE_CLOUD_PROJECT", ""))
     DATASET_ID = os.getenv("BIGQUERY_DATASET_ID", "weather_data")
     BUCKET_NAME = os.getenv("GCS_BUCKET_NAME", "")
     
