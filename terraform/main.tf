@@ -100,7 +100,7 @@ resource "google_bigquery_table" "raw_air_temperature" {
   clustering = ["station_id"]
 
   labels = {
-    source = "data.gov.sg"
+    source = "data-gov-sg"
     type   = "raw"
   }
 }
@@ -151,7 +151,7 @@ resource "google_bigquery_table" "raw_relative_humidity" {
   clustering = ["station_id"]
 
   labels = {
-    source = "data.gov.sg"
+    source = "data-gov-sg"
     type   = "raw"
   }
 }
@@ -202,7 +202,7 @@ resource "google_bigquery_table" "raw_rainfall" {
   clustering = ["station_id"]
 
   labels = {
-    source = "data.gov.sg"
+    source = "data-gov-sg"
     type   = "raw"
   }
 }
@@ -253,7 +253,7 @@ resource "google_bigquery_table" "raw_wind_speed" {
   clustering = ["station_id"]
 
   labels = {
-    source = "data.gov.sg"
+    source = "data-gov-sg"
     type   = "raw"
   }
 }
@@ -322,7 +322,7 @@ resource "google_bigquery_table" "unified_weather" {
   clustering = ["station_id", "reading_type"]
 
   labels = {
-    source = "data.gov.sg"
+    source = "data-gov-sg"
     type   = "analytics"
   }
 }
