@@ -536,7 +536,20 @@ Changes to Outputs:
 Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply" now.
 ```
 
-* make terraform-apply
+
+
+
+
+
+
+
+
+
+
+
+
+
+* make terraform-apply with issues
 ```bash
 @KaiquanMah ➜ /workspaces/sg-weather-2021-2026 (main) $ make terraform-apply
 cd terraform && terraform apply \
@@ -1081,4 +1094,456 @@ google_storage_bucket.weather_raw_bucket: Creation complete after 1s [id=proud-o
 │ 
 ╵
 make: *** [Makefile:63: terraform-apply] Error 1
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* fixed `terraform/main.tf`: labels > source contains '-' instead of '.' because GCP labels cannot contain '.' dots
+```
+@KaiquanMah ➜ /workspaces/sg-weather-2021-2026 (main) $ make terraform-apply
+cd terraform && terraform apply \
+        -var="project_id=proud-outrider-483901-c3" \
+        -var="region=asia-southeast1" \
+        -auto-approve
+random_string.bucket_suffix: Refreshing state... [id=kfru2uzo]
+google_storage_bucket.weather_raw_bucket: Refreshing state... [id=proud-outrider-483901-c3-weather-raw-kfru2uzo]
+google_bigquery_dataset.weather_dataset: Refreshing state... [id=projects/proud-outrider-483901-c3/datasets/weather_data]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # google_bigquery_table.raw_air_temperature will be created
+  + resource "google_bigquery_table" "raw_air_temperature" {
+      + allow_resource_tags_on_deletion = false
+      + clustering                      = [
+          + "station_id",
+        ]
+      + creation_time                   = (known after apply)
+      + dataset_id                      = "weather_data"
+      + deletion_protection             = true
+      + effective_labels                = {
+          + "source" = "data-gov-sg"
+          + "type"   = "raw"
+        }
+      + etag                            = (known after apply)
+      + expiration_time                 = (known after apply)
+      + id                              = (known after apply)
+      + labels                          = {
+          + "source" = "data-gov-sg"
+          + "type"   = "raw"
+        }
+      + last_modified_time              = (known after apply)
+      + location                        = (known after apply)
+      + num_bytes                       = (known after apply)
+      + num_long_term_bytes             = (known after apply)
+      + num_rows                        = (known after apply)
+      + project                         = "proud-outrider-483901-c3"
+      + schema                          = jsonencode(
+            [
+              + {
+                  + description = "Reading timestamp in SGT"
+                  + mode        = "REQUIRED"
+                  + name        = "timestamp"
+                  + type        = "TIMESTAMP"
+                },
+              + {
+                  + description = "Weather station ID"
+                  + mode        = "REQUIRED"
+                  + name        = "station_id"
+                  + type        = "STRING"
+                },
+              + {
+                  + description = "Air temperature in Celsius"
+                  + mode        = "REQUIRED"
+                  + name        = "temperature"
+                  + type        = "FLOAT"
+                },
+              + {
+                  + description = "Unit of measurement"
+                  + mode        = "NULLABLE"
+                  + name        = "unit"
+                  + type        = "STRING"
+                },
+              + {
+                  + description = "Timestamp when data was ingested"
+                  + mode        = "NULLABLE"
+                  + name        = "ingest_timestamp"
+                  + type        = "TIMESTAMP"
+                },
+            ]
+        )
+      + self_link                       = (known after apply)
+      + table_id                        = "raw_air_temperature"
+      + terraform_labels                = {
+          + "source" = "data-gov-sg"
+          + "type"   = "raw"
+        }
+      + type                            = (known after apply)
+
+      + time_partitioning {
+          + expiration_ms = (known after apply)
+          + field         = "timestamp"
+          + type          = "DAY"
+        }
+    }
+
+  # google_bigquery_table.raw_rainfall will be created
+  + resource "google_bigquery_table" "raw_rainfall" {
+      + allow_resource_tags_on_deletion = false
+      + clustering                      = [
+          + "station_id",
+        ]
+      + creation_time                   = (known after apply)
+      + dataset_id                      = "weather_data"
+      + deletion_protection             = true
+      + effective_labels                = {
+          + "source" = "data-gov-sg"
+          + "type"   = "raw"
+        }
+      + etag                            = (known after apply)
+      + expiration_time                 = (known after apply)
+      + id                              = (known after apply)
+      + labels                          = {
+          + "source" = "data-gov-sg"
+          + "type"   = "raw"
+        }
+      + last_modified_time              = (known after apply)
+      + location                        = (known after apply)
+      + num_bytes                       = (known after apply)
+      + num_long_term_bytes             = (known after apply)
+      + num_rows                        = (known after apply)
+      + project                         = "proud-outrider-483901-c3"
+      + schema                          = jsonencode(
+            [
+              + {
+                  + description = "Reading timestamp in SGT"
+                  + mode        = "REQUIRED"
+                  + name        = "timestamp"
+                  + type        = "TIMESTAMP"
+                },
+              + {
+                  + description = "Weather station ID"
+                  + mode        = "REQUIRED"
+                  + name        = "station_id"
+                  + type        = "STRING"
+                },
+              + {
+                  + description = "Rainfall amount in mm"
+                  + mode        = "REQUIRED"
+                  + name        = "rainfall"
+                  + type        = "FLOAT"
+                },
+              + {
+                  + description = "Unit of measurement"
+                  + mode        = "NULLABLE"
+                  + name        = "unit"
+                  + type        = "STRING"
+                },
+              + {
+                  + description = "Timestamp when data was ingested"
+                  + mode        = "NULLABLE"
+                  + name        = "ingest_timestamp"
+                  + type        = "TIMESTAMP"
+                },
+            ]
+        )
+      + self_link                       = (known after apply)
+      + table_id                        = "raw_rainfall"
+      + terraform_labels                = {
+          + "source" = "data-gov-sg"
+          + "type"   = "raw"
+        }
+      + type                            = (known after apply)
+
+      + time_partitioning {
+          + expiration_ms = (known after apply)
+          + field         = "timestamp"
+          + type          = "DAY"
+        }
+    }
+
+  # google_bigquery_table.raw_relative_humidity will be created
+  + resource "google_bigquery_table" "raw_relative_humidity" {
+      + allow_resource_tags_on_deletion = false
+      + clustering                      = [
+          + "station_id",
+        ]
+      + creation_time                   = (known after apply)
+      + dataset_id                      = "weather_data"
+      + deletion_protection             = true
+      + effective_labels                = {
+          + "source" = "data-gov-sg"
+          + "type"   = "raw"
+        }
+      + etag                            = (known after apply)
+      + expiration_time                 = (known after apply)
+      + id                              = (known after apply)
+      + labels                          = {
+          + "source" = "data-gov-sg"
+          + "type"   = "raw"
+        }
+      + last_modified_time              = (known after apply)
+      + location                        = (known after apply)
+      + num_bytes                       = (known after apply)
+      + num_long_term_bytes             = (known after apply)
+      + num_rows                        = (known after apply)
+      + project                         = "proud-outrider-483901-c3"
+      + schema                          = jsonencode(
+            [
+              + {
+                  + description = "Reading timestamp in SGT"
+                  + mode        = "REQUIRED"
+                  + name        = "timestamp"
+                  + type        = "TIMESTAMP"
+                },
+              + {
+                  + description = "Weather station ID"
+                  + mode        = "REQUIRED"
+                  + name        = "station_id"
+                  + type        = "STRING"
+                },
+              + {
+                  + description = "Relative humidity percentage"
+                  + mode        = "REQUIRED"
+                  + name        = "humidity"
+                  + type        = "FLOAT"
+                },
+              + {
+                  + description = "Unit of measurement"
+                  + mode        = "NULLABLE"
+                  + name        = "unit"
+                  + type        = "STRING"
+                },
+              + {
+                  + description = "Timestamp when data was ingested"
+                  + mode        = "NULLABLE"
+                  + name        = "ingest_timestamp"
+                  + type        = "TIMESTAMP"
+                },
+            ]
+        )
+      + self_link                       = (known after apply)
+      + table_id                        = "raw_relative_humidity"
+      + terraform_labels                = {
+          + "source" = "data-gov-sg"
+          + "type"   = "raw"
+        }
+      + type                            = (known after apply)
+
+      + time_partitioning {
+          + expiration_ms = (known after apply)
+          + field         = "timestamp"
+          + type          = "DAY"
+        }
+    }
+
+  # google_bigquery_table.raw_wind_speed will be created
+  + resource "google_bigquery_table" "raw_wind_speed" {
+      + allow_resource_tags_on_deletion = false
+      + clustering                      = [
+          + "station_id",
+        ]
+      + creation_time                   = (known after apply)
+      + dataset_id                      = "weather_data"
+      + deletion_protection             = true
+      + effective_labels                = {
+          + "source" = "data-gov-sg"
+          + "type"   = "raw"
+        }
+      + etag                            = (known after apply)
+      + expiration_time                 = (known after apply)
+      + id                              = (known after apply)
+      + labels                          = {
+          + "source" = "data-gov-sg"
+          + "type"   = "raw"
+        }
+      + last_modified_time              = (known after apply)
+      + location                        = (known after apply)
+      + num_bytes                       = (known after apply)
+      + num_long_term_bytes             = (known after apply)
+      + num_rows                        = (known after apply)
+      + project                         = "proud-outrider-483901-c3"
+      + schema                          = jsonencode(
+            [
+              + {
+                  + description = "Reading timestamp in SGT"
+                  + mode        = "REQUIRED"
+                  + name        = "timestamp"
+                  + type        = "TIMESTAMP"
+                },
+              + {
+                  + description = "Weather station ID"
+                  + mode        = "REQUIRED"
+                  + name        = "station_id"
+                  + type        = "STRING"
+                },
+              + {
+                  + description = "Wind speed in knots"
+                  + mode        = "REQUIRED"
+                  + name        = "speed"
+                  + type        = "FLOAT"
+                },
+              + {
+                  + description = "Unit of measurement"
+                  + mode        = "NULLABLE"
+                  + name        = "unit"
+                  + type        = "STRING"
+                },
+              + {
+                  + description = "Timestamp when data was ingested"
+                  + mode        = "NULLABLE"
+                  + name        = "ingest_timestamp"
+                  + type        = "TIMESTAMP"
+                },
+            ]
+        )
+      + self_link                       = (known after apply)
+      + table_id                        = "raw_wind_speed"
+      + terraform_labels                = {
+          + "source" = "data-gov-sg"
+          + "type"   = "raw"
+        }
+      + type                            = (known after apply)
+
+      + time_partitioning {
+          + expiration_ms = (known after apply)
+          + field         = "timestamp"
+          + type          = "DAY"
+        }
+    }
+
+  # google_bigquery_table.unified_weather will be created
+  + resource "google_bigquery_table" "unified_weather" {
+      + allow_resource_tags_on_deletion = false
+      + clustering                      = [
+          + "station_id",
+          + "reading_type",
+        ]
+      + creation_time                   = (known after apply)
+      + dataset_id                      = "weather_data"
+      + deletion_protection             = true
+      + effective_labels                = {
+          + "source" = "data-gov-sg"
+          + "type"   = "analytics"
+        }
+      + etag                            = (known after apply)
+      + expiration_time                 = (known after apply)
+      + id                              = (known after apply)
+      + labels                          = {
+          + "source" = "data-gov-sg"
+          + "type"   = "analytics"
+        }
+      + last_modified_time              = (known after apply)
+      + location                        = (known after apply)
+      + num_bytes                       = (known after apply)
+      + num_long_term_bytes             = (known after apply)
+      + num_rows                        = (known after apply)
+      + project                         = "proud-outrider-483901-c3"
+      + schema                          = jsonencode(
+            [
+              + {
+                  + description = "Reading timestamp in SGT"
+                  + mode        = "REQUIRED"
+                  + name        = "reading_timestamp"
+                  + type        = "TIMESTAMP"
+                },
+              + {
+                  + description = "Weather station ID"
+                  + mode        = "REQUIRED"
+                  + name        = "station_id"
+                  + type        = "STRING"
+                },
+              + {
+                  + description = "Air temperature in Celsius"
+                  + mode        = "NULLABLE"
+                  + name        = "temperature"
+                  + type        = "FLOAT"
+                },
+              + {
+                  + description = "Relative humidity percentage"
+                  + mode        = "NULLABLE"
+                  + name        = "humidity"
+                  + type        = "FLOAT"
+                },
+              + {
+                  + description = "Rainfall amount in mm"
+                  + mode        = "NULLABLE"
+                  + name        = "rainfall"
+                  + type        = "FLOAT"
+                },
+              + {
+                  + description = "Wind speed in knots"
+                  + mode        = "NULLABLE"
+                  + name        = "wind_speed"
+                  + type        = "FLOAT"
+                },
+              + {
+                  + description = "Type of reading (temperature, humidity, etc.)"
+                  + mode        = "NULLABLE"
+                  + name        = "reading_type"
+                  + type        = "STRING"
+                },
+              + {
+                  + description = "Timestamp when data was ingested"
+                  + mode        = "NULLABLE"
+                  + name        = "ingest_timestamp"
+                  + type        = "TIMESTAMP"
+                },
+            ]
+        )
+      + self_link                       = (known after apply)
+      + table_id                        = "unified_weather"
+      + terraform_labels                = {
+          + "source" = "data-gov-sg"
+          + "type"   = "analytics"
+        }
+      + type                            = (known after apply)
+
+      + time_partitioning {
+          + expiration_ms = (known after apply)
+          + field         = "reading_timestamp"
+          + type          = "DAY"
+        }
+    }
+
+Plan: 5 to add, 0 to change, 0 to destroy.
+google_bigquery_table.raw_air_temperature: Creating...
+google_bigquery_table.raw_wind_speed: Creating...
+google_bigquery_table.raw_rainfall: Creating...
+google_bigquery_table.unified_weather: Creating...
+google_bigquery_table.raw_relative_humidity: Creating...
+google_bigquery_table.raw_air_temperature: Creation complete after 1s [id=projects/proud-outrider-483901-c3/datasets/weather_data/tables/raw_air_temperature]
+google_bigquery_table.unified_weather: Creation complete after 1s [id=projects/proud-outrider-483901-c3/datasets/weather_data/tables/unified_weather]
+google_bigquery_table.raw_wind_speed: Creation complete after 1s [id=projects/proud-outrider-483901-c3/datasets/weather_data/tables/raw_wind_speed]
+google_bigquery_table.raw_rainfall: Creation complete after 1s [id=projects/proud-outrider-483901-c3/datasets/weather_data/tables/raw_rainfall]
+google_bigquery_table.raw_relative_humidity: Creation complete after 1s [id=projects/proud-outrider-483901-c3/datasets/weather_data/tables/raw_relative_humidity]
+
+Apply complete! Resources: 5 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+bigquery_dataset_id = "weather_data"
+gcs_bucket_name = "proud-outrider-483901-c3-weather-raw-kfru2uzo"
+raw_air_temperature_table = "raw_air_temperature"
+raw_rainfall_table = "raw_rainfall"
+raw_relative_humidity_table = "raw_relative_humidity"
+raw_wind_speed_table = "raw_wind_speed"
+unified_weather_table = "unified_weather"
 ```
