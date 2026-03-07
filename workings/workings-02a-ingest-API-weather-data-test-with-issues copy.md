@@ -1,4 +1,4 @@
-* ingest weather data from 4 APIs
+* ingest weather data from 4 APIs - Initial issues
 ```bash
 @KaiquanMah ➜ /workspaces/sg-weather-2021-2026 (main) $ make run-ingestion
 python scripts/ingest.py

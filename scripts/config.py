@@ -33,11 +33,25 @@ class Config:
     
     # Date range for backfill (Jan 2021 to Feb 2026)
     #   for testing
-    START_DATE = datetime(2020, 12, 1)
-    END_DATE = datetime(2020, 12, 5)
+    # START_DATE = datetime(2020, 12, 1)
+    # END_DATE = datetime(2020, 12, 5)
     #   for actual ingestion
     # START_DATE = datetime(2021, 1, 1)
     # END_DATE = datetime(2026, 2, 28)
+    #     run ingestion on a yearly basis - to deal with exceptions / debug if they come up
+    START_DATE = datetime(2021, 1, 1)
+    END_DATE = datetime(2021, 12, 31)
+    # START_DATE = datetime(2022, 1, 1)
+    # END_DATE = datetime(2022, 12, 31)
+    # START_DATE = datetime(2023, 1, 1)
+    # END_DATE = datetime(2023, 12, 31)
+    # START_DATE = datetime(2024, 1, 1)
+    # END_DATE = datetime(2024, 12, 31)
+    # START_DATE = datetime(2025, 1, 1)
+    # END_DATE = datetime(2025, 12, 31)
+    # START_DATE = datetime(2026, 1, 1)
+    # END_DATE = datetime(2026, 2, 28)
+
     
     # GCP Configuration
     PROJECT_ID = os.getenv("PROJECT_ID", os.getenv("GOOGLE_CLOUD_PROJECT", ""))
