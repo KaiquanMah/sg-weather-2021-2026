@@ -6,6 +6,7 @@ from typing import Dict, List, Optional
 from config import Config
 from datetime import datetime
 import concurrent.futures
+import pytz
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -105,7 +106,7 @@ class WeatherAPIClient:
                     "value": station_data.get("value"),
                     "date": date_str,
                     "endpoint": endpoint,
-                    "ingest_timestamp": datetime.utcnow().isoformat()
+                    "ingest_timestamp": datetime.now(pytz.timezone('Asia/Singapore')).isoformat()
                 }
 
                 processed_readings.append(processed_reading)
