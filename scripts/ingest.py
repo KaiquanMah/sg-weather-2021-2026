@@ -1,3 +1,4 @@
+import os
 import logging
 from datetime import datetime, timedelta
 from api_client import WeatherAPIClient
@@ -5,7 +6,19 @@ from loaders import DataLoader
 from config import Config
 
 # Set up logging
-logging.basicConfig(level=logging.INFO)
+log_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "workings")
+os.makedirs(log_dir, exist_ok=True)
+log_filename = os.path.join(log_dir, f"workings-03b-ingest-API-weather-data-{Config.START_DATE.year}.txt")
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(levelname)s:%(name)s:%(message)s',
+    handlers=[
+        logging.FileHandler(log_filename, mode='a'), # write to log file
+        logging.StreamHandler() # also write to Terminal console
+    ],
+    force=True
+)
 logger = logging.getLogger(__name__)
 
 def run_ingestion(start_date: datetime, end_date: datetime):
