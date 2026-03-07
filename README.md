@@ -406,6 +406,14 @@ The Kestra workflow (`kestra/weather_pipeline.yaml`) implements the complete dat
 - Loads data to GCS and BigQuery
 - Creates the unified view in BigQuery after all data is loaded
 
+## API Dataset
+* air-temperature: [API documentation](https://data.gov.sg/datasets/d_66b77726bbae1b33f218db60ff5861f0/view), [API](https://api-open.data.gov.sg/v2/real-time/api/air-temperature)
+* relative-humidity: [API documentation](https://data.gov.sg/datasets/d_2d3b0c4da128a9a59efca806441e1429/view), [API](https://api-open.data.gov.sg/v2/real-time/api/relative-humidity)
+* rainfall: [API documentation](https://data.gov.sg/datasets/d_6580738cdd7db79374ed3152159fbd69/view), [API](https://api-open.data.gov.sg/v2/real-time/api/rainfall)
+* wind-speed: [API documentation](https://data.gov.sg/datasets/d_7677738484067741bf3b56ab5d69c7e9/view), [API](https://api-open.data.gov.sg/v2/real-time/api/wind-speed)
+
+
+
 ## Data Model
 
 The solution creates several BigQuery tables:

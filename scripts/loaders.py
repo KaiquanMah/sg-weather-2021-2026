@@ -3,7 +3,9 @@ from google.cloud import bigquery, storage
 import logging
 from typing import Dict, List
 import json
-from scripts.config import Config
+# from scripts.config import Config
+from config import Config
+
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
