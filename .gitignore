@@ -1,3 +1,5 @@
+.agent/
+
 # Logs and temp files
 *.log
 *.tmp
