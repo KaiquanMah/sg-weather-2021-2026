@@ -94,17 +94,46 @@ class WeatherAPIClient:
         
         # Add metadata to each reading
         processed_readings = []
+        # for reading in readings:
+        #     processed_reading = {
+        #         "timestamp": reading.get("timestamp"),
+        #         "station_id": reading.get("stationId"),
+        #         "value": reading.get("value"),
+        #         "date": date_str,
+        #         "endpoint": endpoint,
+        #         "ingest_timestamp": datetime.utcnow().isoformat()
+        #     }
+        #     processed_readings.append(processed_reading)
+
+        # to fix ingestion error
+        # eg from API specs
+        # "readings": [
+        #                 {
+        #                     "timestamp": "2024-07-16T15:59:00.000Z",
+        #                     "data": [                    // ← ARRAY of station readings
+        #                     {"stationId": "S108", "value": 29},
+        #                     {"stationId": "S109", "value": 30}
+        #                     ]
+        #                 }
+        #             ]
         for reading in readings:
-            processed_reading = {
-                "timestamp": reading.get("timestamp"),
-                "station_id": reading.get("stationId"),
-                "value": reading.get("value"),
-                "date": date_str,
-                "endpoint": endpoint,
-                "ingest_timestamp": datetime.utcnow().isoformat()
-            }
-            processed_readings.append(processed_reading)
-        
+            timestamp = reading.get("timestamp")
+
+            for station_data in reading.get("data", []):
+                processed_reading = {
+                    "timestamp": timestamp,
+                    "station_id": station_data.get("stationId"),
+                    "value": station_data.get("value"),
+                    "date": date_str,
+                    "endpoint": endpoint,
+                    "ingest_timestamp": datetime.utcnow().isoformat()
+                }
+
+                processed_readings.append(processed_reading)
+
+
+
+
         # Add delay to respect rate limits
         time.sleep(self.request_delay)
         
