@@ -298,12 +298,25 @@ To trigger CI:
 
 #### Step 9: Orchestration with Kestra
 
-For production workflows, use Kestra:
+For production workflows (e.g., year 2022 onwards), use Kestra to run the pipeline automatically:
 
 1. **Deploy Kestra** to your environment
-2. **Update** `kestra/weather_pipeline.yaml` with your project details
-3. **Import** the workflow into Kestra UI
-4. **Schedule** or manually trigger the pipeline
+2. **Mount your Python scripts**: Because the Kestra Docker runner isolates its environment, it needs access to your Python files. Copy them to the shared `/tmp` directory in your Codespace first:
+   ```bash
+   cp scripts/*.py /tmp/
+   ```
+3. **Import the Workflow**:
+   - Open your Kestra UI in your browser.
+   - Navigate to the **Flows** tab on the left sidebar.
+   - Click the **Create** button.
+   - Paste the contents of `kestra/weather_pipeline.yaml` into the code editor.
+   - Click **Save**.
+4. **Execute the Pipeline**:
+   - Click the **Execute** button at the top right of your newly saved Flow.
+   - Kestra will prompt you for an `api_key`. Paste your `DATA_GOV_SG_API_KEY` from your `.env` file here.
+   - (Optional) You can override the `start_date` and `end_date` defaults here if you wish to run a different year.
+   - Click **Execute**. 
+5. **Monitor Logs**: You can now watch the execution logs entirely from the Kestra UI under the **Logs** tab of that run!
 
 ### Common Development Tasks
 
