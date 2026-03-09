@@ -43,6 +43,8 @@ tasks:
     taskRunner:
       type: io.kestra.plugin.scripts.runner.docker.Docker
       image: python:3.10-slim          # was: containerImage
+    beforeCommands:
+      - pip install kestra              # <-- ADD THIS
     script: |
       import json
       from datetime import datetime, timedelta
@@ -58,11 +60,14 @@ tasks:
           current += timedelta(days=1)
 
       print(f"Generated {len(dates)} dates")
-      Kestra.outputs({'dates': json.dumps(dates)})
+      # Kestra.outputs({'dates': json.dumps(dates)})
+      Kestra.outputs({"dates": dates})         # ← No json.dumps, pass native list
 
   - id: parallel_ingestion
     type: io.kestra.plugin.core.flow.ForEach
-    values: "{{ outputs.generate_date_range.vars.dates }}"
+    # Update the ForEach (remove invalid concurrencyLimit: 0 and fix output reference):
+    values: "{{ outputs.generate_date_range.dates }}"   # Try this first
+    # values: "{{ outputs.generate_date_range.vars.dates }}"  # Alternative if above fails
     concurrencyLimit: 0
     tasks:
       - id: fetch_and_load_single_date
@@ -76,7 +81,7 @@ tasks:
           volumes:
             - /tmp:/tmp
         beforeCommands:
-          - pip install requests pandas google-cloud-bigquery google-cloud-storage pyarrow pandas-gbq pytz
+          - pip install kestra requests pandas google-cloud-bigquery google-cloud-storage pyarrow pandas-gbq pytz
         script: |
           import os
           import sys
