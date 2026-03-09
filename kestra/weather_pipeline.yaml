@@ -36,7 +36,7 @@ inputs:
 
 tasks:
   - id: generate_date_range
-    type: io.kestra.core.tasks.flows.EachSequential
+    type: io.kestra.plugin.core.flow.EachSequential
     value: "{{ inputs.start_date }}"
     tasks:
       - id: parse_start_date
@@ -64,7 +64,7 @@ tasks:
               f.write('\n'.join(dates))
 
   - id: parallel_ingestion
-    type: io.kestra.core.tasks.flows.EachParallel
+    type: io.kestra.plugin.core.flow.EachParallel
     value: "{{ outputs.generate_date_range.items }}"
     tasks:
       - id: fetch_and_load_single_date

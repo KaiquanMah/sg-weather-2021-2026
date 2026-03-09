@@ -40,7 +40,7 @@ services:
       - "8085:80"
 
   kestra:
-    image: kestra/kestra:v0.16.0
+    image: kestra/kestra:v0.18.3
     command: server standalone
     volumes:
       - kestra_data:/app/storage
