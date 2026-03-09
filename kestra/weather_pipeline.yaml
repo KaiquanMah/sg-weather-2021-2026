@@ -60,14 +60,15 @@ tasks:
           current += timedelta(days=1)
 
       print(f"Generated {len(dates)} dates")
-      # Kestra.outputs({'dates': json.dumps(dates)})
-      Kestra.outputs({"dates": dates})         # ← No json.dumps, pass native list
+      # converts the list to a JSON string like '["2025-01-01","2025-01-02"]' — this is important because ForEach.values needs a string it can parse into a list.
+      Kestra.outputs({'dates': json.dumps(dates)})
+      # Kestra.outputs({"dates": dates})         # ← No json.dumps, pass native list
 
   - id: parallel_ingestion
     type: io.kestra.plugin.core.flow.ForEach
     # Update the ForEach (remove invalid concurrencyLimit: 0 and fix output reference):
-    values: "{{ outputs.generate_date_range.dates }}"   # Try this first
-    # values: "{{ outputs.generate_date_range.vars.dates }}"  # Alternative if above fails
+    # values: "{{ outputs.generate_date_range.dates }}"   # Try this first
+    values: "{{ outputs.generate_date_range.vars.dates }}"  # Alternative if above fails
     concurrencyLimit: 0
     tasks:
       - id: fetch_and_load_single_date
