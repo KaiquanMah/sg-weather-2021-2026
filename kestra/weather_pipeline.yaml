@@ -37,9 +37,12 @@ inputs:
 tasks:
   - id: generate_date_range
     type: io.kestra.plugin.scripts.python.Script
+    # taskRunner:
+    #   type: io.kestra.plugin.scripts.runner.docker.Docker
+    #   containerImage: python:3.10-slim
     taskRunner:
       type: io.kestra.plugin.scripts.runner.docker.Docker
-      containerImage: python:3.10-slim
+      image: python:3.10-slim          # was: containerImage
     script: |
       import json
       from datetime import datetime, timedelta
@@ -64,9 +67,12 @@ tasks:
     tasks:
       - id: fetch_and_load_single_date
         type: io.kestra.plugin.scripts.python.Script
+        # taskRunner:
+        #   type: io.kestra.plugin.scripts.runner.docker.Docker
+        #   containerImage: python:3.10-slim
         taskRunner:
           type: io.kestra.plugin.scripts.runner.docker.Docker
-          containerImage: python:3.10-slim
+          image: python:3.10-slim      # was: containerImage
           volumes:
             - /tmp:/tmp
         beforeCommands:
