@@ -300,7 +300,13 @@ To trigger CI:
 
 For production workflows (e.g., year 2022 onwards), use Kestra to run the pipeline automatically:
 
-1. **Deploy Kestra** to your environment
+1. **Deploy Kestra** to your local environment using the provided Docker Compose file:
+   ```bash
+   cd kestra
+   # docker-compose down
+   docker-compose up -d
+   ```
+   *Wait a few moments for Kestra to start on `http://localhost:8080`*
 2. **Mount your Python scripts**: Because the Kestra Docker runner isolates its environment, it needs access to your Python files. Copy them to the shared `/tmp` directory in your Codespace first:
    ```bash
    cp scripts/*.py /tmp/
