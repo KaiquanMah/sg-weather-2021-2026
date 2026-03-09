@@ -41,6 +41,7 @@ services:
 
   kestra:
     image: kestra/kestra:v0.18.3
+    user: "root"      # <-- ADD THIS LINE to fix permission denied error
     command: server standalone
     volumes:
       - kestra_data:/app/storage
