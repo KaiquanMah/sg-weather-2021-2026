@@ -81,6 +81,8 @@ tasks:
           image: python:3.10-slim      # was: containerImage
           volumes:
             - /tmp:/tmp
+            - /workspaces/sg-weather-2021-2026/scripts:/app/scripts   # <-- ADD THIS
+            - /workspaces/sg-weather-2021-2026/proud-outrider-483901-c3-2f890d3d3b86.json:/app/gcp-key.json
         beforeCommands:
           - pip install kestra requests pandas google-cloud-bigquery google-cloud-storage pyarrow pandas-gbq pytz
         script: |
@@ -88,12 +90,15 @@ tasks:
           import sys
           from datetime import datetime
 
-          sys.path.insert(0, '/tmp')
+          # sys.path.insert(0, '/tmp')
+          sys.path.insert(0, '/app/scripts')    # <-- CHANGED from '/tmp'
+
 
           os.environ['GOOGLE_CLOUD_PROJECT'] = '{{ inputs.project_id }}'
           os.environ['BIGQUERY_DATASET_ID'] = '{{ inputs.dataset_id }}'
           os.environ['GCS_BUCKET_NAME'] = '{{ inputs.bucket_name }}'
           os.environ['DATA_GOV_SG_API_KEY'] = '{{ inputs.api_key }}'
+          os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/app/gcp-key.json'
 
           from api_client import WeatherAPIClient
           from loaders import DataLoader
