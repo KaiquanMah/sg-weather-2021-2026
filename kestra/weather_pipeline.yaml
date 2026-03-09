@@ -12,14 +12,15 @@ labels:
 inputs:
   - name: start_date
     type: STRING
-    defaults: "2021-01-01"
+    defaults: "2022-01-01"
     description: Start date for data ingestion (YYYY-MM-DD)
   - name: end_date
     type: STRING
-    defaults: "2026-02-28"
+    defaults: "2022-12-31"
     description: End date for data ingestion (YYYY-MM-DD)
   - name: project_id
     type: STRING
+    defaults: "proud-outrider-483901-c3"
     description: GCP Project ID
   - name: dataset_id
     type: STRING
@@ -27,6 +28,7 @@ inputs:
     description: BigQuery Dataset ID
   - name: bucket_name
     type: STRING
+    defaults: "proud-outrider-483901-c3-weather-raw-kfru2uzo"
     description: GCS Bucket Name for raw data
   - name: api_key
     type: STRING
@@ -81,7 +83,7 @@ tasks:
           def install_packages():
               subprocess.check_call([sys.executable, "-m", "pip", "install", 
                                    "requests", "pandas", "google-cloud-bigquery", 
-                                   "google-cloud-storage"])
+                                   "google-cloud-storage", "pyarrow", "pandas-gbq", "pytz"])
           
           install_packages()
           
