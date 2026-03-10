@@ -353,21 +353,258 @@ We use a Dimension Table to append Station names, latitudes, and longitudes to t
    ```
    *This script pings 1 day from 2021, 2022, 2023, 2024, 2025, and 2026 across all 4 APIs to capture every station (even decommissioned ones), drops duplicates, and loads them into a `weather_data.stations` BigQuery table.*
 
-2. **Create the Unified BigQuery View**:
-   Since the Kestra pipeline creates the core datasets, you can manually run this SQL snippet in your Google Cloud BigQuery Console to instantly join the lat/lon metadata to your existing weather table:
-
+2. **Create or Update the Relevant BigQuery Tables to Prepare for Analysis**:
+   
    ```sql
-   CREATE OR REPLACE VIEW `your-project-id.weather_data.unified_weather_with_stations` AS
-   SELECT 
-     w.*,
-     s.name AS station_name,
-     s.latitude,
-     s.longitude
-   FROM `your-project-id.weather_data.unified_weather` w
-   LEFT JOIN `your-project-id.weather_data.stations` s
-   ON w.station_id = s.station_id;
+   -- 1. Drop the table (since it is empty anyway)
+   DROP TABLE IF EXISTS `proud-outrider-483901-c3.weather_data.unified_weather`;
+
+   -- 2. Recreate with original descriptions/labels/constraints, minus reading_type field (eg temp/rainfall/humidity/wind_speed), then add station_name/lat/lon
+   CREATE TABLE `proud-outrider-483901-c3.weather_data.unified_weather`
+   (
+   reading_timestamp TIMESTAMP NOT NULL OPTIONS(description="Reading timestamp in SGT"),
+   station_id STRING NOT NULL OPTIONS(description="Weather station ID"),
+   station_name STRING OPTIONS(description="Name of the weather station"),
+   latitude FLOAT64 OPTIONS(description="Station latitude"),
+   longitude FLOAT64 OPTIONS(description="Station longitude"),
+   temperature FLOAT64 OPTIONS(description="Air temperature in Celsius"),
+   humidity FLOAT64 OPTIONS(description="Relative humidity percentage"),
+   rainfall FLOAT64 OPTIONS(description="Rainfall amount in mm"),
+   wind_speed FLOAT64 OPTIONS(description="Wind speed in knots"),
+   ingest_timestamp TIMESTAMP OPTIONS(description="Timestamp when data was ingested")
+   )
+   PARTITION BY DATE(reading_timestamp)
+   CLUSTER BY station_id 
+   OPTIONS(
+   labels=[("source", "data-gov-sg"), ("type", "analytics")]
+   );
+
+
+
+   -- 3. Add cols to
+   -- convert lat-lon to coordinates with GEOGRAPHY DATATYPE
+   -- then bring in from the 'map' - region/plannning_area/subzone names
+   ALTER TABLE `proud-outrider-483901-c3.weather_data.unified_weather`
+   ADD COLUMN coordinate GEOGRAPHY OPTIONS(description="Station lat/lon as GEOGRAPHY point"),
+   ADD COLUMN region_name STRING OPTIONS(description="URA region name"),
+   ADD COLUMN planning_area_name STRING OPTIONS(description="URA planning area name"),
+   ADD COLUMN subzone_name STRING OPTIONS(description="URA subzone name"),
+   ADD COLUMN station_name STRING OPTIONS(description="Station Road Name");
+   ADD COLUMN latitude STRING OPTIONS(description="latitude"),
+   ADD COLUMN longitude STRING OPTIONS(description="longitude");
+
+
+   --Query error: ALTER TABLE ALTER COLUMN SET DATA TYPE requires that the existing column type (STRING) is assignable to the new type (FLOAT64) at [39:1]
+   ALTER TABLE `proud-outrider-483901-c3.weather_data.unified_weather`
+   ALTER COLUMN latitude SET DATA TYPE FLOAT64,
+   ALTER COLUMN latitude SET OPTIONS(description="Station latitude");
+
+   ALTER TABLE `proud-outrider-483901-c3.weather_data.unified_weather`
+   ALTER COLUMN longitude SET DATA TYPE FLOAT64,
+   ALTER COLUMN longitude SET OPTIONS(description="Station longitude");
+
+
+
+   -- Drop the STRING columns
+   ALTER TABLE `proud-outrider-483901-c3.weather_data.unified_weather`
+   DROP COLUMN latitude;
+
+   ALTER TABLE `proud-outrider-483901-c3.weather_data.unified_weather`
+   DROP COLUMN longitude;
+
+   -- Re-add as FLOAT64
+   ALTER TABLE `proud-outrider-483901-c3.weather_data.unified_weather`
+   ADD COLUMN latitude FLOAT64 OPTIONS(description="Station latitude"),
+   ADD COLUMN longitude FLOAT64 OPTIONS(description="Station longitude");
+
+
+
+
+
+
+
+
+
+   -- 4. Check data type of 'geometry' field - STRING or GEOGRAPHY
+   --   it was STRING
+   SELECT column_name, data_type
+   FROM `proud-outrider-483901-c3.weather_data.INFORMATION_SCHEMA.COLUMNS`
+   WHERE table_name = 'map' AND column_name = 'geometry';
+
+
+   -- 5. Create 'stations_with_region' table
+   CREATE OR REPLACE TABLE `proud-outrider-483901-c3.weather_data.stations_with_region` AS
+   SELECT
+   s.station_id,
+   s.name,
+   s.latitude,
+   s.longitude,
+   ST_GEOGPOINT(s.longitude, s.latitude)   AS coordinate,
+   m.REGION_N                               AS region_name,
+   m.PLN_AREA_N                             AS planning_area_name,
+   m.SUBZONE_N                              AS subzone_name
+   FROM `proud-outrider-483901-c3.weather_data.stations` s
+   LEFT JOIN `proud-outrider-483901-c3.weather_data.map` m
+   ON ST_CONTAINS(
+      -- ══ Pick ONE of these based on your geometry column type ══
+      -- 1 If geometry is STRING (GeoJSON):
+      --    If the named argument make_valid is set to TRUE, the function attempts to repair polygons that don't conform to Open Geospatial Consortium semantics.
+      ST_GEOGFROMGEOJSON(m.geometry, make_valid => TRUE),
+      -- 2 If geometry is already GEOGRAPHY:
+      -- m.geometry,
+
+      -- then keep this whether we have (1) STRING input 
+      -- or (2) GEOGRAPHY input above for the GeoJSON's Polygon
+      ST_GEOGPOINT(s.longitude, s.latitude)
+   );
+
+
+
+
+   -- 6. Fill NA region/planning area/subzone name for
+   --    East Coast Parkway
+   UPDATE `proud-outrider-483901-c3.weather_data.stations_with_region`
+   SET region_name = 'EAST REGION', 
+       planning_area_name = 'EAST COAST',
+       subzone_name = 'EAST COAST'
+   WHERE	station_id ='S107';
+
+
+
+
+
+
+
+   -- 7. Insert the Data (Keeping then interpolating NULL temperature/humidity/rainfall/wind_speed measures)
+   DECLARE ingest_ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP();
+
+   INSERT INTO `proud-outrider-483901-c3.weather_data.unified_weather` (
+   reading_timestamp,
+   station_id,
+   station_name,
+   latitude,
+   longitude,
+   temperature,
+   humidity,
+   rainfall,
+   wind_speed,
+   ingest_timestamp,
+   coordinate,
+   region_name,
+   planning_area_name,
+   subzone_name
+   )
+
+   WITH spine AS (
+   -- Step 1: Create the master timeline for all stations
+   SELECT timestamp, station_id 
+   FROM `proud-outrider-483901-c3.weather_data.raw_air_temperature`
+
+   UNION DISTINCT
+
+   SELECT timestamp, station_id 
+   FROM `proud-outrider-483901-c3.weather_data.raw_rainfall`
+
+   UNION DISTINCT
+
+   SELECT timestamp, station_id 
+   FROM `proud-outrider-483901-c3.weather_data.raw_relative_humidity`
+
+   UNION DISTINCT
+
+   SELECT timestamp, station_id 
+   FROM `proud-outrider-483901-c3.weather_data.raw_wind_speed`
+   ),
+
+   raw_joined AS (
+   -- Step 2: Join the raw data and the new enriched station geo-data
+   SELECT
+      s.timestamp AS reading_timestamp,
+      s.station_id,
+      st.name AS station_name,
+      st.latitude,
+      st.longitude,
+      st.coordinate,
+      st.region_name,
+      st.planning_area_name,
+      st.subzone_name,
+      t.temperature,
+      h.humidity,
+      r.rainfall,
+      w.speed AS wind_speed
+   FROM spine s
+   LEFT JOIN `proud-outrider-483901-c3.weather_data.stations_with_region` st
+      ON s.station_id = st.station_id
+   LEFT JOIN `proud-outrider-483901-c3.weather_data.raw_air_temperature` t
+      ON s.timestamp = t.timestamp 
+      AND s.station_id = t.station_id
+   LEFT JOIN `proud-outrider-483901-c3.weather_data.raw_relative_humidity` h
+      ON s.timestamp = h.timestamp 
+      AND s.station_id = h.station_id
+   LEFT JOIN `proud-outrider-483901-c3.weather_data.raw_rainfall` r
+      ON s.timestamp = r.timestamp 
+      AND s.station_id = r.station_id
+   LEFT JOIN `proud-outrider-483901-c3.weather_data.raw_wind_speed` w
+      ON s.timestamp = w.timestamp 
+      AND s.station_id = w.station_id
+   ),
+
+   with_neighbors AS (
+   -- Step 3: Find the nearest valid past and future values for each metric
+   SELECT
+      *,
+      
+      -- Temperature Neighbors
+      LAST_VALUE(temperature IGNORE NULLS) OVER w_prev AS prev_temp,
+      FIRST_VALUE(temperature IGNORE NULLS) OVER w_next AS next_temp,
+      
+      -- Humidity Neighbors
+      LAST_VALUE(humidity IGNORE NULLS) OVER w_prev AS prev_hum,
+      FIRST_VALUE(humidity IGNORE NULLS) OVER w_next AS next_hum,
+      
+      -- Rainfall Neighbors
+      LAST_VALUE(rainfall IGNORE NULLS) OVER w_prev AS prev_rain,
+      FIRST_VALUE(rainfall IGNORE NULLS) OVER w_next AS next_rain,
+      
+      -- Wind Speed Neighbors
+      LAST_VALUE(wind_speed IGNORE NULLS) OVER w_prev AS prev_wind,
+      FIRST_VALUE(wind_speed IGNORE NULLS) OVER w_next AS next_wind
+
+   FROM raw_joined
+   WINDOW 
+      -- Looks at everything before the current row
+      w_prev AS (PARTITION BY station_id ORDER BY reading_timestamp ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING),
+      -- Looks at everything after the current row
+      w_next AS (PARTITION BY station_id ORDER BY reading_timestamp ROWS BETWEEN 1 FOLLOWING AND UNBOUNDED FOLLOWING)
+   )
+   -- Step 4: Calculate the final interpolated values and Insert
+   SELECT
+   reading_timestamp,
+   station_id,
+   station_name,
+   latitude,
+   longitude,
+   
+   -- The FillNA Logic: COALESCE stops at the first NON-NULL value it finds.
+   -- 1. Use actual | 2. Use Average | 3. Use Prev (if no next) | 4. Use Next (if no prev)
+   COALESCE(temperature, (prev_temp + next_temp) / 2.0, prev_temp, next_temp) AS temperature,
+   COALESCE(humidity,    (prev_hum + next_hum) / 2.0,   prev_hum,  next_hum)  AS humidity,
+   COALESCE(rainfall,    (prev_rain + next_rain) / 2.0, prev_rain, next_rain) AS rainfall,
+   COALESCE(wind_speed,  (prev_wind + next_wind) / 2.0, prev_wind, next_wind) AS wind_speed,
+   
+   -- Inject the declared variable here
+   ingest_ts AS ingest_timestamp,
+   
+   -- Appended spatial fields
+   coordinate,
+   region_name,
+   planning_area_name,
+   subzone_name
+
+   FROM with_neighbors;
+
    ```
-   *(Make sure to replace `your-project-id` with your actual GCP Project ID)*
+   
 
 ### Common Development Tasks
 
