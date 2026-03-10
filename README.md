@@ -343,7 +343,7 @@ For geospatial visualizations, we also securely store the physical boundaries of
    * It writes a `.parquet` payload to your GCS bucket under a new `map/` directory.
    * It triggers a `pandas-gbq` load to automatically construct a `weather_data.map` BigQuery table.
 
-#### Step 11: Ingesting Station Lat/Lon Metadata
+#### Step 11: Ingesting Station Lat/Lon Metadata AND BigQuery Data Transformations
 
 We use a Dimension Table to append Station names, latitudes, and longitudes to the historical data, rather than re-ingesting 5 years of parquet files.
 
