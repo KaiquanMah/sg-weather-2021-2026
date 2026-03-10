@@ -1,0 +1,55 @@
+INFO:__main__:Starting historical station metadata extraction...
+INFO:__main__:Querying air-temperature for 2021-01-01
+INFO:__main__:Querying relative-humidity for 2021-01-01
+INFO:__main__:Querying rainfall for 2021-01-01
+INFO:__main__:Querying wind-speed for 2021-01-01
+INFO:__main__:Querying air-temperature for 2022-01-01
+INFO:__main__:Querying relative-humidity for 2022-01-01
+INFO:__main__:Querying rainfall for 2022-01-01
+INFO:__main__:Querying wind-speed for 2022-01-01
+INFO:__main__:Querying air-temperature for 2023-01-01
+INFO:__main__:Querying relative-humidity for 2023-01-01
+INFO:__main__:Querying rainfall for 2023-01-01
+INFO:__main__:Querying wind-speed for 2023-01-01
+INFO:__main__:Querying air-temperature for 2024-01-01
+INFO:__main__:Querying relative-humidity for 2024-01-01
+INFO:__main__:Querying rainfall for 2024-01-01
+INFO:__main__:Querying wind-speed for 2024-01-01
+INFO:__main__:Querying air-temperature for 2025-01-01
+INFO:__main__:Querying relative-humidity for 2025-01-01
+INFO:__main__:Querying rainfall for 2025-01-01
+INFO:__main__:Querying wind-speed for 2025-01-01
+INFO:__main__:Querying air-temperature for 2026-01-01
+INFO:__main__:Querying relative-humidity for 2026-01-01
+INFO:__main__:Querying rainfall for 2026-01-01
+INFO:__main__:Querying wind-speed for 2026-01-01
+WARNING:__main__:No stations were fetched. Exiting.
+INFO:__main__:Starting historical station metadata extraction...
+INFO:__main__:Querying air-temperature for 2021-01-01
+INFO:__main__:Querying relative-humidity for 2021-01-01
+INFO:__main__:Querying rainfall for 2021-01-01
+INFO:__main__:Querying wind-speed for 2021-01-01
+INFO:__main__:Querying air-temperature for 2022-01-01
+INFO:__main__:Querying relative-humidity for 2022-01-01
+INFO:__main__:Querying rainfall for 2022-01-01
+INFO:__main__:Querying wind-speed for 2022-01-01
+INFO:__main__:Querying air-temperature for 2023-01-01
+INFO:__main__:Querying relative-humidity for 2023-01-01
+INFO:__main__:Querying rainfall for 2023-01-01
+INFO:__main__:Querying wind-speed for 2023-01-01
+INFO:__main__:Querying air-temperature for 2024-01-01
+INFO:__main__:Querying relative-humidity for 2024-01-01
+INFO:__main__:Querying rainfall for 2024-01-01
+INFO:__main__:Querying wind-speed for 2024-01-01
+INFO:__main__:Querying air-temperature for 2025-01-01
+INFO:__main__:Querying relative-humidity for 2025-01-01
+INFO:__main__:Querying rainfall for 2025-01-01
+INFO:__main__:Querying wind-speed for 2025-01-01
+INFO:__main__:Querying air-temperature for 2026-01-01
+INFO:__main__:Querying relative-humidity for 2026-01-01
+INFO:__main__:Querying rainfall for 2026-01-01
+INFO:__main__:Querying wind-speed for 2026-01-01
+INFO:__main__:Successfully extracted 79 UNIQUE stations across all historical queries.
+INFO:__main__:Uploaded station metadata to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/stations/stations.parquet
+INFO:__main__:Loading station metadata into BigQuery table weather_data.stations...
+INFO:__main__:Successfully loaded 79 dimension records into weather_data.stations
