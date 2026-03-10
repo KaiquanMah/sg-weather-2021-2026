@@ -49,7 +49,7 @@ class Config:
     # END_DATE = datetime(2024, 12, 31)
     # START_DATE = datetime(2025, 1, 1)
     START_DATE = datetime(2025, 1, 3)
-    # END_DATE = datetime(2025, 12, 31)
+    END_DATE = datetime(2025, 12, 31)
     # START_DATE = datetime(2026, 1, 1)
     # END_DATE = datetime(2026, 2, 28)
 
