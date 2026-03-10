@@ -343,6 +343,32 @@ For geospatial visualizations, we also securely store the physical boundaries of
    * It writes a `.parquet` payload to your GCS bucket under a new `map/` directory.
    * It triggers a `pandas-gbq` load to automatically construct a `weather_data.map` BigQuery table.
 
+#### Step 11: Ingesting Station Lat/Lon Metadata
+
+We use a Dimension Table to append Station names, latitudes, and longitudes to the historical data, rather than re-ingesting 5 years of parquet files.
+
+1. **Execute the Ingestion**:
+   ```bash
+   python scripts/ingest_stations.py
+   ```
+   *This script pings 1 day from 2021, 2022, 2023, 2024, 2025, and 2026 across all 4 APIs to capture every station (even decommissioned ones), drops duplicates, and loads them into a `weather_data.stations` BigQuery table.*
+
+2. **Create the Unified BigQuery View**:
+   Since the Kestra pipeline creates the core datasets, you can manually run this SQL snippet in your Google Cloud BigQuery Console to instantly join the lat/lon metadata to your existing weather table:
+
+   ```sql
+   CREATE OR REPLACE VIEW `your-project-id.weather_data.unified_weather_with_stations` AS
+   SELECT 
+     w.*,
+     s.name AS station_name,
+     s.latitude,
+     s.longitude
+   FROM `your-project-id.weather_data.unified_weather` w
+   LEFT JOIN `your-project-id.weather_data.stations` s
+   ON w.station_id = s.station_id;
+   ```
+   *(Make sure to replace `your-project-id` with your actual GCP Project ID)*
+
 ### Common Development Tasks
 
 #### Adding a New Weather Metric
