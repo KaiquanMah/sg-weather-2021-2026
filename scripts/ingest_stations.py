@@ -55,9 +55,9 @@ class StationIngestor:
         response = self.api_client._make_request(url, params)
         stations_list = []
         
-        if response and "metadata" in response:
-            metadata = response.get("metadata", {})
-            stations = metadata.get("stations", [])
+        if response and "data" in response:
+            data = response.get("data", {})
+            stations = data.get("stations", [])
             for stn in stations:
                 loc = stn.get("location", {})
                 stations_list.append({
