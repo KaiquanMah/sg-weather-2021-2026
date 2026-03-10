@@ -1,0 +1,6 @@
+INFO:__main__:Fetching URA Master Plan Subzone GeoJSON...
+INFO:__main__:Reading local GeoJSON file: /workspaces/sg-weather-2021-2026/scripts/ura_mp19_subzone.geojson
+INFO:__main__:Processed 332 subzones from GeoJSON.
+INFO:__main__:Uploaded map data to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/map/ura_mp19_subzone.parquet
+INFO:__main__:Loading map data into BigQuery table weather_data.map...
+INFO:__main__:Successfully loaded 332 rows into weather_data.map
