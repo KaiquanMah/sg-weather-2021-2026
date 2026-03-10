@@ -1,0 +1,318 @@
+2026-03-09T14:25:22.507Z INFO Provided 0 input(s).
+2026-03-09T14:25:22.622Z INFO Provided 1 input(s).
+2026-03-09T14:25:28.937Z INFO Collecting kestra
+2026-03-09T14:25:28.956Z INFO   Downloading kestra-1.3.0-py3-none-any.whl (9.0 kB)
+2026-03-09T14:25:29.173Z INFO Collecting amazon.ion
+2026-03-09T14:25:29.178Z INFO   Downloading amazon.ion-0.13.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (913 kB)
+2026-03-09T14:25:29.210Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 913.5/913.5 kB 32.7 MB/s eta 0:00:00
+2026-03-09T14:25:29.263Z INFO Collecting python-dateutil
+2026-03-09T14:25:29.289Z INFO   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+2026-03-09T14:25:29.311Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 229.9/229.9 kB 6.9 MB/s eta 0:00:00
+2026-03-09T14:25:29.416Z INFO Collecting requests
+2026-03-09T14:25:29.433Z INFO   Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+2026-03-09T14:25:29.445Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.7/64.7 kB 5.5 MB/s eta 0:00:00
+2026-03-09T14:25:29.499Z INFO Collecting six>=1.5
+2026-03-09T14:25:29.523Z INFO   Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+2026-03-09T14:25:29.600Z INFO Collecting certifi>=2017.4.17
+2026-03-09T14:25:29.605Z INFO   Downloading certifi-2026.2.25-py3-none-any.whl (153 kB)
+2026-03-09T14:25:29.617Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 153.7/153.7 kB 16.3 MB/s eta 0:00:00
+2026-03-09T14:25:29.756Z INFO Collecting urllib3<3,>=1.21.1
+2026-03-09T14:25:29.760Z INFO   Downloading urllib3-2.6.3-py3-none-any.whl (131 kB)
+2026-03-09T14:25:29.774Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.6/131.6 kB 15.1 MB/s eta 0:00:00
+2026-03-09T14:25:30.041Z INFO Collecting charset_normalizer<4,>=2
+2026-03-09T14:25:30.048Z INFO   Downloading charset_normalizer-3.4.5-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (196 kB)
+2026-03-09T14:25:30.069Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 196.5/196.5 kB 10.5 MB/s eta 0:00:00
+2026-03-09T14:25:30.102Z INFO Collecting idna<4,>=2.5
+2026-03-09T14:25:30.109Z INFO   Downloading idna-3.11-py3-none-any.whl (71 kB)
+2026-03-09T14:25:30.118Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.0/71.0 kB 11.2 MB/s eta 0:00:00
+2026-03-09T14:25:30.226Z INFO Installing collected packages: amazon.ion, urllib3, six, idna, charset_normalizer, certifi, requests, python-dateutil, kestra
+2026-03-09T14:25:30.701Z INFO Successfully installed amazon.ion-0.13.0 certifi-2026.2.25 charset_normalizer-3.4.5 idna-3.11 kestra-1.3.0 python-dateutil-2.9.0.post0 requests-2.32.5 six-1.17.0 urllib3-2.6.3
+2026-03-09T14:25:30.950Z INFO Generated 2 dates
+2026-03-09T14:25:31.184Z INFO ::{"outputs": {"dates": "[\"2025-01-01\", \"2025-01-02\"]"}}::
+2026-03-09T14:25:32.113Z INFO Provided 0 input(s).
+2026-03-09T14:25:32.114Z INFO Provided 0 input(s).
+2026-03-09T14:25:32.129Z INFO Provided 1 input(s).
+2026-03-09T14:25:32.130Z INFO Provided 1 input(s).
+2026-03-09T14:25:37.684Z INFO Collecting kestra
+2026-03-09T14:25:37.716Z INFO Collecting kestra
+2026-03-09T14:25:37.757Z INFO   Downloading kestra-1.3.0-py3-none-any.whl (9.0 kB)
+2026-03-09T14:25:37.764Z INFO   Downloading kestra-1.3.0-py3-none-any.whl (9.0 kB)
+2026-03-09T14:25:37.867Z INFO Collecting requests
+2026-03-09T14:25:37.875Z INFO Collecting requests
+2026-03-09T14:25:37.875Z INFO   Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+2026-03-09T14:25:37.884Z INFO   Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+2026-03-09T14:25:37.896Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.7/64.7 kB 4.6 MB/s eta 0:00:00
+2026-03-09T14:25:37.902Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.7/64.7 kB 7.5 MB/s eta 0:00:00
+2026-03-09T14:25:38.428Z INFO Collecting pandas
+2026-03-09T14:25:38.438Z INFO   Downloading pandas-2.3.3-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.8 MB)
+2026-03-09T14:25:38.454Z INFO Collecting pandas
+2026-03-09T14:25:38.489Z INFO   Downloading pandas-2.3.3-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.8 MB)
+2026-03-09T14:25:39.118Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 17.1 MB/s eta 0:00:00
+2026-03-09T14:25:39.132Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 16.2 MB/s eta 0:00:00
+2026-03-09T14:25:39.352Z INFO Collecting google-cloud-bigquery
+2026-03-09T14:25:39.360Z INFO   Downloading google_cloud_bigquery-3.40.1-py3-none-any.whl (262 kB)
+2026-03-09T14:25:39.375Z INFO Collecting google-cloud-bigquery
+2026-03-09T14:25:39.380Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 262.0/262.0 kB 18.5 MB/s eta 0:00:00
+2026-03-09T14:25:39.386Z INFO   Downloading google_cloud_bigquery-3.40.1-py3-none-any.whl (262 kB)
+2026-03-09T14:25:39.409Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 262.0/262.0 kB 16.9 MB/s eta 0:00:00
+2026-03-09T14:25:39.523Z INFO Collecting google-cloud-storage
+2026-03-09T14:25:39.548Z INFO   Downloading google_cloud_storage-3.9.0-py3-none-any.whl (321 kB)
+2026-03-09T14:25:39.634Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 321.3/321.3 kB 3.9 MB/s eta 0:00:00
+2026-03-09T14:25:39.670Z INFO Collecting google-cloud-storage
+2026-03-09T14:25:39.729Z INFO   Downloading google_cloud_storage-3.9.0-py3-none-any.whl (321 kB)
+2026-03-09T14:25:39.741Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 321.3/321.3 kB 9.0 MB/s eta 0:00:00
+2026-03-09T14:25:40.283Z INFO Collecting pyarrow
+2026-03-09T14:25:40.300Z INFO   Downloading pyarrow-23.0.1-cp310-cp310-manylinux_2_28_x86_64.whl (47.6 MB)
+2026-03-09T14:25:40.399Z INFO Collecting pyarrow
+2026-03-09T14:25:40.419Z INFO   Downloading pyarrow-23.0.1-cp310-cp310-manylinux_2_28_x86_64.whl (47.6 MB)
+2026-03-09T14:25:42.700Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.6/47.6 MB 5.7 MB/s eta 0:00:00
+2026-03-09T14:25:42.701Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.6/47.6 MB 6.1 MB/s eta 0:00:00
+2026-03-09T14:25:42.906Z INFO Collecting pandas-gbq
+2026-03-09T14:25:42.916Z INFO   Downloading pandas_gbq-0.34.0-py3-none-any.whl (50 kB)
+2026-03-09T14:25:42.936Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.7/50.7 kB 2.7 MB/s eta 0:00:00
+2026-03-09T14:25:42.950Z INFO Collecting pandas-gbq
+2026-03-09T14:25:42.956Z INFO   Downloading pandas_gbq-0.34.0-py3-none-any.whl (50 kB)
+2026-03-09T14:25:42.974Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.7/50.7 kB 6.4 MB/s eta 0:00:00
+2026-03-09T14:25:43.123Z INFO Collecting pytz
+2026-03-09T14:25:43.137Z INFO   Downloading pytz-2026.1.post1-py2.py3-none-any.whl (510 kB)
+2026-03-09T14:25:43.160Z INFO Collecting pytz
+2026-03-09T14:25:43.162Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 510.5/510.5 kB 19.8 MB/s eta 0:00:00
+2026-03-09T14:25:43.167Z INFO   Downloading pytz-2026.1.post1-py2.py3-none-any.whl (510 kB)
+2026-03-09T14:25:43.201Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 510.5/510.5 kB 19.8 MB/s eta 0:00:00
+2026-03-09T14:25:43.261Z INFO Collecting python-dateutil
+2026-03-09T14:25:43.266Z INFO   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+2026-03-09T14:25:43.285Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 229.9/229.9 kB 18.8 MB/s eta 0:00:00
+2026-03-09T14:25:43.288Z INFO Collecting python-dateutil
+2026-03-09T14:25:43.293Z INFO   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+2026-03-09T14:25:43.308Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 229.9/229.9 kB 24.8 MB/s eta 0:00:00
+2026-03-09T14:25:43.405Z INFO Collecting amazon.ion
+2026-03-09T14:25:43.419Z INFO   Downloading amazon.ion-0.13.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (913 kB)
+2026-03-09T14:25:43.431Z INFO Collecting amazon.ion
+2026-03-09T14:25:43.438Z INFO   Downloading amazon.ion-0.13.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (913 kB)
+2026-03-09T14:25:43.470Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 913.5/913.5 kB 18.7 MB/s eta 0:00:00
+2026-03-09T14:25:43.475Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 913.5/913.5 kB 30.1 MB/s eta 0:00:00
+2026-03-09T14:25:43.569Z INFO Collecting idna<4,>=2.5
+2026-03-09T14:25:43.577Z INFO   Downloading idna-3.11-py3-none-any.whl (71 kB)
+2026-03-09T14:25:43.591Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.0/71.0 kB 6.4 MB/s eta 0:00:00
+2026-03-09T14:25:43.617Z INFO Collecting certifi>=2017.4.17
+2026-03-09T14:25:43.627Z INFO   Downloading certifi-2026.2.25-py3-none-any.whl (153 kB)
+2026-03-09T14:25:43.645Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 153.7/153.7 kB 15.6 MB/s eta 0:00:00
+2026-03-09T14:25:43.684Z INFO Collecting certifi>=2017.4.17
+2026-03-09T14:25:43.698Z INFO   Downloading certifi-2026.2.25-py3-none-any.whl (153 kB)
+2026-03-09T14:25:43.709Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 153.7/153.7 kB 15.1 MB/s eta 0:00:00
+2026-03-09T14:25:43.765Z INFO Collecting urllib3<3,>=1.21.1
+2026-03-09T14:25:43.775Z INFO   Downloading urllib3-2.6.3-py3-none-any.whl (131 kB)
+2026-03-09T14:25:43.793Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.6/131.6 kB 6.7 MB/s eta 0:00:00
+2026-03-09T14:25:43.864Z INFO Collecting urllib3<3,>=1.21.1
+2026-03-09T14:25:43.871Z INFO   Downloading urllib3-2.6.3-py3-none-any.whl (131 kB)
+2026-03-09T14:25:43.900Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.6/131.6 kB 7.9 MB/s eta 0:00:00
+2026-03-09T14:25:44.329Z INFO Collecting charset_normalizer<4,>=2
+2026-03-09T14:25:44.398Z INFO   Downloading charset_normalizer-3.4.5-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (196 kB)
+2026-03-09T14:25:44.406Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 196.5/196.5 kB 4.0 MB/s eta 0:00:00
+2026-03-09T14:25:44.478Z INFO Collecting idna<4,>=2.5
+2026-03-09T14:25:44.500Z INFO   Downloading idna-3.11-py3-none-any.whl (71 kB)
+2026-03-09T14:25:44.515Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.0/71.0 kB 4.7 MB/s eta 0:00:00
+2026-03-09T14:25:44.585Z INFO Collecting charset_normalizer<4,>=2
+2026-03-09T14:25:44.605Z INFO   Downloading charset_normalizer-3.4.5-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (196 kB)
+2026-03-09T14:25:44.620Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 196.5/196.5 kB 20.7 MB/s eta 0:00:00
+2026-03-09T14:25:44.876Z INFO Collecting tzdata>=2022.7
+2026-03-09T14:25:44.901Z INFO Collecting tzdata>=2022.7
+2026-03-09T14:25:44.904Z INFO   Downloading tzdata-2025.3-py2.py3-none-any.whl (348 kB)
+2026-03-09T14:25:44.916Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 348.5/348.5 kB 15.4 MB/s eta 0:00:00
+2026-03-09T14:25:44.949Z INFO   Downloading tzdata-2025.3-py2.py3-none-any.whl (348 kB)
+2026-03-09T14:25:44.965Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 348.5/348.5 kB 9.6 MB/s eta 0:00:00
+2026-03-09T14:25:45.993Z INFO Collecting numpy>=1.22.4
+2026-03-09T14:25:46.002Z INFO   Downloading numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)
+2026-03-09T14:25:46.066Z INFO Collecting numpy>=1.22.4
+2026-03-09T14:25:46.072Z INFO   Downloading numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)
+2026-03-09T14:25:46.836Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.8/16.8 MB 15.5 MB/s eta 0:00:00
+2026-03-09T14:25:46.846Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.8/16.8 MB 15.6 MB/s eta 0:00:00
+2026-03-09T14:25:47.093Z INFO Collecting packaging>=24.2.0
+2026-03-09T14:25:47.101Z INFO Collecting google-cloud-core<3.0.0,>=2.4.1
+2026-03-09T14:25:47.107Z INFO   Downloading packaging-26.0-py3-none-any.whl (74 kB)
+2026-03-09T14:25:47.119Z INFO   Downloading google_cloud_core-2.5.0-py3-none-any.whl (29 kB)
+2026-03-09T14:25:47.127Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 74.4/74.4 kB 5.0 MB/s eta 0:00:00
+2026-03-09T14:25:47.237Z INFO Collecting google-resumable-media<3.0.0,>=2.0.0
+2026-03-09T14:25:47.249Z INFO   Downloading google_resumable_media-2.8.0-py3-none-any.whl (81 kB)
+2026-03-09T14:25:47.263Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 81.3/81.3 kB 7.2 MB/s eta 0:00:00
+2026-03-09T14:25:47.329Z INFO Collecting google-api-core[grpc]<3.0.0,>=2.11.1
+2026-03-09T14:25:47.338Z INFO   Downloading google_api_core-2.30.0-py3-none-any.whl (173 kB)
+2026-03-09T14:25:47.368Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 173.3/173.3 kB 11.9 MB/s eta 0:00:00
+2026-03-09T14:25:47.446Z INFO Collecting google-resumable-media<3.0.0,>=2.0.0
+2026-03-09T14:25:47.455Z INFO   Downloading google_resumable_media-2.8.0-py3-none-any.whl (81 kB)
+2026-03-09T14:25:47.480Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 81.3/81.3 kB 4.3 MB/s eta 0:00:00
+2026-03-09T14:25:47.499Z INFO Collecting google-auth<3.0.0,>=2.14.1
+2026-03-09T14:25:47.509Z INFO   Downloading google_auth-2.49.0-py3-none-any.whl (240 kB)
+2026-03-09T14:25:47.525Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 240.7/240.7 kB 20.2 MB/s eta 0:00:00
+2026-03-09T14:25:47.570Z INFO Collecting google-cloud-core<3.0.0,>=2.4.1
+2026-03-09T14:25:47.581Z INFO   Downloading google_cloud_core-2.5.0-py3-none-any.whl (29 kB)
+2026-03-09T14:25:47.695Z INFO Collecting google-api-core[grpc]<3.0.0,>=2.11.1
+2026-03-09T14:25:47.706Z INFO   Downloading google_api_core-2.30.0-py3-none-any.whl (173 kB)
+2026-03-09T14:25:47.724Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 173.3/173.3 kB 18.9 MB/s eta 0:00:00
+2026-03-09T14:25:47.792Z INFO Collecting packaging>=24.2.0
+2026-03-09T14:25:47.799Z INFO   Downloading packaging-26.0-py3-none-any.whl (74 kB)
+2026-03-09T14:25:47.816Z INFO Collecting google-auth<3.0.0,>=2.14.1
+2026-03-09T14:25:47.819Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 74.4/74.4 kB 4.6 MB/s eta 0:00:00
+2026-03-09T14:25:47.835Z INFO   Downloading google_auth-2.49.0-py3-none-any.whl (240 kB)
+2026-03-09T14:25:47.852Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 240.7/240.7 kB 21.5 MB/s eta 0:00:00
+2026-03-09T14:25:48.242Z INFO Collecting google-crc32c<2.0.0,>=1.1.3
+2026-03-09T14:25:48.250Z INFO   Downloading google_crc32c-1.8.0-cp310-cp310-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl (33 kB)
+2026-03-09T14:25:48.328Z INFO Collecting google-crc32c<2.0.0,>=1.1.3
+2026-03-09T14:25:48.341Z INFO   Downloading google_crc32c-1.8.0-cp310-cp310-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl (33 kB)
+2026-03-09T14:25:48.365Z INFO Requirement already satisfied: setuptools in /usr/local/lib/python3.10/site-packages (from pandas-gbq) (79.0.1)
+2026-03-09T14:25:48.468Z INFO Collecting google-auth-oauthlib>=0.7.0
+2026-03-09T14:25:48.476Z INFO   Downloading google_auth_oauthlib-1.3.0-py3-none-any.whl (19 kB)
+2026-03-09T14:25:48.532Z INFO Collecting db-dtypes<2.0.0,>=1.0.4
+2026-03-09T14:25:48.542Z INFO   Downloading db_dtypes-1.5.0-py3-none-any.whl (18 kB)
+2026-03-09T14:25:48.834Z INFO Collecting psutil>=5.9.8
+2026-03-09T14:25:48.840Z INFO   Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+2026-03-09T14:25:48.853Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.6/155.6 kB 17.1 MB/s eta 0:00:00
+2026-03-09T14:25:48.878Z INFO Requirement already satisfied: setuptools in /usr/local/lib/python3.10/site-packages (from pandas-gbq) (79.0.1)
+2026-03-09T14:25:48.889Z INFO Collecting psutil>=5.9.8
+2026-03-09T14:25:48.896Z INFO   Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+2026-03-09T14:25:48.909Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.6/155.6 kB 20.8 MB/s eta 0:00:00
+2026-03-09T14:25:48.960Z INFO Collecting db-dtypes<2.0.0,>=1.0.4
+2026-03-09T14:25:48.972Z INFO   Downloading db_dtypes-1.5.0-py3-none-any.whl (18 kB)
+2026-03-09T14:25:48.977Z INFO Collecting pydata-google-auth>=1.5.0
+2026-03-09T14:25:48.984Z INFO   Downloading pydata_google_auth-1.9.1-py2.py3-none-any.whl (15 kB)
+2026-03-09T14:25:49.033Z INFO Collecting pydata-google-auth>=1.5.0
+2026-03-09T14:25:49.051Z INFO   Downloading pydata_google_auth-1.9.1-py2.py3-none-any.whl (15 kB)
+2026-03-09T14:25:49.118Z INFO Collecting google-auth-oauthlib>=0.7.0
+2026-03-09T14:25:49.125Z INFO   Downloading google_auth_oauthlib-1.3.0-py3-none-any.whl (19 kB)
+2026-03-09T14:25:49.329Z INFO Collecting proto-plus<2.0.0,>=1.22.3
+2026-03-09T14:25:49.339Z INFO   Downloading proto_plus-1.27.1-py3-none-any.whl (50 kB)
+2026-03-09T14:25:49.360Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.5/50.5 kB 5.7 MB/s eta 0:00:00
+2026-03-09T14:25:50.213Z INFO Collecting protobuf<7.0.0,>=4.25.8
+2026-03-09T14:25:50.233Z INFO   Downloading protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+2026-03-09T14:25:50.280Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 323.5/323.5 kB 11.9 MB/s eta 0:00:00
+2026-03-09T14:25:50.351Z INFO Collecting proto-plus<2.0.0,>=1.22.3
+2026-03-09T14:25:50.358Z INFO   Downloading proto_plus-1.27.1-py3-none-any.whl (50 kB)
+2026-03-09T14:25:50.429Z INFO Collecting protobuf<7.0.0,>=4.25.8
+2026-03-09T14:25:50.444Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.5/50.5 kB 594.4 kB/s eta 0:00:00
+2026-03-09T14:25:50.445Z INFO   Downloading protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+2026-03-09T14:25:50.515Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 323.5/323.5 kB 5.0 MB/s eta 0:00:00
+2026-03-09T14:25:50.644Z INFO Collecting googleapis-common-protos<2.0.0,>=1.56.3
+2026-03-09T14:25:50.653Z INFO   Downloading googleapis_common_protos-1.73.0-py3-none-any.whl (297 kB)
+2026-03-09T14:25:50.654Z INFO Collecting googleapis-common-protos<2.0.0,>=1.56.3
+2026-03-09T14:25:50.667Z INFO   Downloading googleapis_common_protos-1.73.0-py3-none-any.whl (297 kB)
+2026-03-09T14:25:50.694Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 297.6/297.6 kB 10.6 MB/s eta 0:00:00
+2026-03-09T14:25:50.697Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 297.6/297.6 kB 11.4 MB/s eta 0:00:00
+2026-03-09T14:25:50.848Z INFO Collecting grpcio-status<2.0.0,>=1.33.2
+2026-03-09T14:25:50.854Z INFO   Downloading grpcio_status-1.78.0-py3-none-any.whl (14 kB)
+2026-03-09T14:25:50.896Z INFO Collecting grpcio-status<2.0.0,>=1.33.2
+2026-03-09T14:25:50.917Z INFO   Downloading grpcio_status-1.78.0-py3-none-any.whl (14 kB)
+2026-03-09T14:25:53.727Z INFO Collecting grpcio<2.0.0,>=1.33.2
+2026-03-09T14:25:53.733Z INFO   Downloading grpcio-1.78.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (6.7 MB)
+2026-03-09T14:25:53.917Z INFO Collecting grpcio<2.0.0,>=1.33.2
+2026-03-09T14:25:53.921Z INFO   Downloading grpcio-1.78.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (6.7 MB)
+2026-03-09T14:25:53.926Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.7/6.7 MB 36.4 MB/s eta 0:00:00
+2026-03-09T14:25:54.069Z INFO Collecting pyasn1-modules>=0.2.1
+2026-03-09T14:25:54.140Z INFO   Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+2026-03-09T14:25:54.150Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.7/6.7 MB 30.4 MB/s eta 0:00:00
+2026-03-09T14:25:54.154Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 181.3/181.3 kB 2.6 MB/s eta 0:00:00
+2026-03-09T14:25:54.230Z INFO Collecting rsa<5,>=3.1.4
+2026-03-09T14:25:54.243Z INFO   Downloading rsa-4.9.1-py3-none-any.whl (34 kB)
+2026-03-09T14:25:54.295Z INFO Collecting rsa<5,>=3.1.4
+2026-03-09T14:25:54.306Z INFO   Downloading rsa-4.9.1-py3-none-any.whl (34 kB)
+2026-03-09T14:25:54.384Z INFO Collecting pyasn1-modules>=0.2.1
+2026-03-09T14:25:54.395Z INFO   Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+2026-03-09T14:25:54.412Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 181.3/181.3 kB 15.8 MB/s eta 0:00:00
+2026-03-09T14:25:55.211Z INFO Collecting cryptography>=38.0.3
+2026-03-09T14:25:55.220Z INFO   Downloading cryptography-46.0.5-cp38-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+2026-03-09T14:25:55.359Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 33.1 MB/s eta 0:00:00
+2026-03-09T14:25:55.415Z INFO Collecting requests-oauthlib>=0.7.0
+2026-03-09T14:25:55.425Z INFO   Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl (24 kB)
+2026-03-09T14:25:55.437Z INFO Collecting cryptography>=38.0.3
+2026-03-09T14:25:55.460Z INFO   Downloading cryptography-46.0.5-cp38-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+2026-03-09T14:25:55.662Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 20.5 MB/s eta 0:00:00
+2026-03-09T14:25:55.711Z INFO Collecting requests-oauthlib>=0.7.0
+2026-03-09T14:25:55.721Z INFO   Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl (24 kB)
+2026-03-09T14:25:56.072Z INFO Collecting six>=1.5
+2026-03-09T14:25:56.080Z INFO   Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+2026-03-09T14:25:56.229Z INFO Collecting six>=1.5
+2026-03-09T14:25:56.264Z INFO   Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+2026-03-09T14:25:56.369Z INFO Collecting typing-extensions>=4.13.2
+2026-03-09T14:25:56.375Z INFO   Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+2026-03-09T14:25:56.398Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.6/44.6 kB 8.4 MB/s eta 0:00:00
+2026-03-09T14:25:56.420Z INFO Collecting typing-extensions>=4.13.2
+2026-03-09T14:25:56.438Z INFO   Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+2026-03-09T14:25:56.447Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.6/44.6 kB 3.3 MB/s eta 0:00:00
+2026-03-09T14:25:56.963Z INFO Collecting cffi>=2.0.0
+2026-03-09T14:25:56.971Z INFO   Downloading cffi-2.0.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (216 kB)
+2026-03-09T14:25:56.979Z INFO Collecting cffi>=2.0.0
+2026-03-09T14:25:56.991Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 216.5/216.5 kB 13.6 MB/s eta 0:00:00
+2026-03-09T14:25:56.993Z INFO   Downloading cffi-2.0.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (216 kB)
+2026-03-09T14:25:57.054Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 216.5/216.5 kB 6.8 MB/s eta 0:00:00
+2026-03-09T14:25:57.394Z INFO Collecting pyasn1<0.7.0,>=0.6.1
+2026-03-09T14:25:57.400Z INFO   Downloading pyasn1-0.6.2-py3-none-any.whl (83 kB)
+2026-03-09T14:25:57.414Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 83.4/83.4 kB 12.9 MB/s eta 0:00:00
+2026-03-09T14:25:57.480Z INFO Collecting oauthlib>=3.0.0
+2026-03-09T14:25:57.486Z INFO   Downloading oauthlib-3.3.1-py3-none-any.whl (160 kB)
+2026-03-09T14:25:57.500Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 160.1/160.1 kB 14.8 MB/s eta 0:00:00
+2026-03-09T14:25:57.638Z INFO Collecting pycparser
+2026-03-09T14:25:57.646Z INFO   Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+2026-03-09T14:25:57.650Z INFO Collecting pyasn1<0.7.0,>=0.6.1
+2026-03-09T14:25:57.655Z INFO   Downloading pyasn1-0.6.2-py3-none-any.whl (83 kB)
+2026-03-09T14:25:57.657Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 48.2/48.2 kB 7.2 MB/s eta 0:00:00
+2026-03-09T14:25:57.678Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 83.4/83.4 kB 5.5 MB/s eta 0:00:00
+2026-03-09T14:25:57.740Z INFO Collecting oauthlib>=3.0.0
+2026-03-09T14:25:57.745Z INFO   Downloading oauthlib-3.3.1-py3-none-any.whl (160 kB)
+2026-03-09T14:25:57.765Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 160.1/160.1 kB 16.0 MB/s eta 0:00:00
+2026-03-09T14:25:57.908Z INFO Collecting pycparser
+2026-03-09T14:25:57.914Z INFO   Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+2026-03-09T14:25:57.926Z INFO      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 48.2/48.2 kB 4.9 MB/s eta 0:00:00
+2026-03-09T14:25:58.509Z INFO Installing collected packages: pytz, amazon.ion, urllib3, tzdata, typing-extensions, six, pycparser, pyasn1, pyarrow, psutil, protobuf, packaging, oauthlib, numpy, idna, google-crc32c, charset_normalizer, certifi, rsa, requests, python-dateutil, pyasn1-modules, proto-plus, grpcio, googleapis-common-protos, google-resumable-media, cffi, requests-oauthlib, pandas, kestra, grpcio-status, cryptography, google-auth, db-dtypes, google-auth-oauthlib, google-api-core, pydata-google-auth, google-cloud-core, google-cloud-storage, google-cloud-bigquery, pandas-gbq
+2026-03-09T14:25:58.784Z INFO Installing collected packages: pytz, amazon.ion, urllib3, tzdata, typing-extensions, six, pycparser, pyasn1, pyarrow, psutil, protobuf, packaging, oauthlib, numpy, idna, google-crc32c, charset_normalizer, certifi, rsa, requests, python-dateutil, pyasn1-modules, proto-plus, grpcio, googleapis-common-protos, google-resumable-media, cffi, requests-oauthlib, pandas, kestra, grpcio-status, cryptography, google-auth, db-dtypes, google-auth-oauthlib, google-api-core, pydata-google-auth, google-cloud-core, google-cloud-storage, google-cloud-bigquery, pandas-gbq
+2026-03-09T14:26:23.357Z INFO Successfully installed amazon.ion-0.13.0 certifi-2026.2.25 cffi-2.0.0 charset_normalizer-3.4.5 cryptography-46.0.5 db-dtypes-1.5.0 google-api-core-2.30.0 google-auth-2.49.0 google-auth-oauthlib-1.3.0 google-cloud-bigquery-3.40.1 google-cloud-core-2.5.0 google-cloud-storage-3.9.0 google-crc32c-1.8.0 google-resumable-media-2.8.0 googleapis-common-protos-1.73.0 grpcio-1.78.0 grpcio-status-1.78.0 idna-3.11 kestra-1.3.0 numpy-2.2.6 oauthlib-3.3.1 packaging-26.0 pandas-2.3.3 pandas-gbq-0.34.0 proto-plus-1.27.1 protobuf-6.33.5 psutil-7.2.2 pyarrow-23.0.1 pyasn1-0.6.2 pyasn1-modules-0.4.2 pycparser-3.0 pydata-google-auth-1.9.1 python-dateutil-2.9.0.post0 pytz-2026.1.post1 requests-2.32.5 requests-oauthlib-2.0.0 rsa-4.9.1 six-1.17.0 typing-extensions-4.15.0 tzdata-2025.3 urllib3-2.6.3
+2026-03-09T14:26:23.392Z INFO Successfully installed amazon.ion-0.13.0 certifi-2026.2.25 cffi-2.0.0 charset_normalizer-3.4.5 cryptography-46.0.5 db-dtypes-1.5.0 google-api-core-2.30.0 google-auth-2.49.0 google-auth-oauthlib-1.3.0 google-cloud-bigquery-3.40.1 google-cloud-core-2.5.0 google-cloud-storage-3.9.0 google-crc32c-1.8.0 google-resumable-media-2.8.0 googleapis-common-protos-1.73.0 grpcio-1.78.0 grpcio-status-1.78.0 idna-3.11 kestra-1.3.0 numpy-2.2.6 oauthlib-3.3.1 packaging-26.0 pandas-2.3.3 pandas-gbq-0.34.0 proto-plus-1.27.1 protobuf-6.33.5 psutil-7.2.2 pyarrow-23.0.1 pyasn1-0.6.2 pyasn1-modules-0.4.2 pycparser-3.0 pydata-google-auth-1.9.1 python-dateutil-2.9.0.post0 pytz-2026.1.post1 requests-2.32.5 requests-oauthlib-2.0.0 rsa-4.9.1 six-1.17.0 typing-extensions-4.15.0 tzdata-2025.3 urllib3-2.6.3
+2026-03-09T14:26:27.527Z WARN /usr/local/lib/python3.10/site-packages/google/api_core/_python_version_support.py:275: FutureWarning: You are using a Python version (3.10.20) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+2026-03-09T14:26:27.536Z WARN   warnings.warn(message, FutureWarning)
+2026-03-09T14:26:27.589Z WARN /usr/local/lib/python3.10/site-packages/google/api_core/_python_version_support.py:275: FutureWarning: You are using a Python version (3.10.20) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+2026-03-09T14:26:27.593Z WARN   warnings.warn(message, FutureWarning)
+2026-03-09T14:26:28.139Z INFO Processing date: 2025-01-02
+2026-03-09T14:26:28.192Z INFO Processing date: 2025-01-01
+2026-03-09T14:26:28.419Z WARN INFO:api_client:Fetching air-temperature data for 2025-01-02
+2026-03-09T14:26:28.430Z WARN INFO:api_client:Fetching relative-humidity data for 2025-01-02
+2026-03-09T14:26:28.436Z WARN INFO:api_client:Fetching air-temperature data for 2025-01-01
+2026-03-09T14:26:28.439Z WARN INFO:api_client:Fetching rainfall data for 2025-01-02
+2026-03-09T14:26:28.443Z WARN INFO:api_client:Fetching rainfall data for 2025-01-01
+2026-03-09T14:26:28.451Z WARN INFO:api_client:Fetching relative-humidity data for 2025-01-01
+2026-03-09T14:26:28.457Z WARN INFO:api_client:Fetching wind-speed data for 2025-01-01
+2026-03-09T14:26:28.461Z WARN INFO:api_client:Fetching wind-speed data for 2025-01-02
+2026-03-09T14:26:30.288Z WARN INFO:api_client:Fetched 25 readings for rainfall on 2025-01-01
+2026-03-09T14:26:30.339Z WARN INFO:api_client:Fetched 25 readings for rainfall on 2025-01-02
+2026-03-09T14:26:30.409Z WARN INFO:api_client:Fetched 25 readings for air-temperature on 2025-01-02
+2026-03-09T14:26:30.438Z WARN INFO:api_client:Fetched 25 readings for relative-humidity on 2025-01-01
+2026-03-09T14:26:30.447Z WARN INFO:api_client:Fetched 25 readings for wind-speed on 2025-01-02
+2026-03-09T14:26:30.551Z WARN INFO:api_client:Fetched 25 readings for air-temperature on 2025-01-01
+2026-03-09T14:26:30.559Z WARN INFO:api_client:Fetched 25 readings for wind-speed on 2025-01-01
+2026-03-09T14:26:30.614Z WARN INFO:api_client:Fetched 25 readings for relative-humidity on 2025-01-02
+2026-03-09T14:26:32.640Z WARN INFO:loaders:Saved 341 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2025-01-01.parquet
+2026-03-09T14:26:32.696Z WARN INFO:loaders:Saved 1575 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2025-01-01.parquet
+2026-03-09T14:26:32.704Z WARN INFO:loaders:Saved 341 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2025-01-01.parquet
+2026-03-09T14:26:32.714Z WARN INFO:loaders:Saved 341 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2025-01-01.parquet
+2026-03-09T14:26:32.780Z WARN INFO:loaders:Saved 338 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2025-01-02.parquet
+2026-03-09T14:26:32.830Z WARN INFO:loaders:Saved 338 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2025-01-02.parquet
+2026-03-09T14:26:32.839Z WARN INFO:loaders:Saved 338 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2025-01-02.parquet
+2026-03-09T14:26:32.854Z WARN INFO:loaders:Saved 1575 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2025-01-02.parquet
+2026-03-09T14:26:36.380Z WARN INFO:loaders:Loaded 341 records to weather_data.raw_wind_speed
+2026-03-09T14:26:36.386Z WARN INFO:loaders:Completed loading 341 records for wind-speed
+2026-03-09T14:26:36.462Z WARN INFO:loaders:Loaded 1575 records to weather_data.raw_rainfall
+2026-03-09T14:26:36.465Z WARN INFO:loaders:Completed loading 1575 records for rainfall
+2026-03-09T14:26:36.806Z WARN INFO:loaders:Loaded 1575 records to weather_data.raw_rainfall
+2026-03-09T14:26:36.813Z WARN INFO:loaders:Completed loading 1575 records for rainfall
+2026-03-09T14:26:36.980Z WARN INFO:loaders:Loaded 338 records to weather_data.raw_relative_humidity
+2026-03-09T14:26:36.983Z WARN INFO:loaders:Completed loading 338 records for relative-humidity
+2026-03-09T14:26:37.096Z WARN INFO:loaders:Loaded 341 records to weather_data.raw_relative_humidity
+2026-03-09T14:26:37.114Z WARN INFO:loaders:Completed loading 341 records for relative-humidity
+2026-03-09T14:26:37.530Z WARN INFO:loaders:Loaded 338 records to weather_data.raw_air_temperature
+2026-03-09T14:26:37.534Z WARN INFO:loaders:Loaded 341 records to weather_data.raw_air_temperature
+2026-03-09T14:26:37.593Z WARN INFO:loaders:Completed loading 341 records for air-temperature
+2026-03-09T14:26:37.599Z WARN INFO:loaders:Completed loading 338 records for air-temperature
+2026-03-09T14:26:37.603Z INFO Successfully processed date: 2025-01-01
+2026-03-09T14:26:37.627Z WARN INFO:loaders:Total records loaded: 2598
+2026-03-09T14:26:39.247Z WARN INFO:loaders:Loaded 338 records to weather_data.raw_wind_speed
+2026-03-09T14:26:39.251Z WARN INFO:loaders:Completed loading 338 records for wind-speed
+2026-03-09T14:26:39.253Z INFO Successfully processed date: 2025-01-02
+2026-03-09T14:26:39.256Z WARN INFO:loaders:Total records loaded: 2589
+2026-03-09T14:26:41.515Z ERROR Your default credentials were not found. To set up Application Default Credentials for your environment, see https://cloud.google.com/docs/authentication/external/set-up-adc.

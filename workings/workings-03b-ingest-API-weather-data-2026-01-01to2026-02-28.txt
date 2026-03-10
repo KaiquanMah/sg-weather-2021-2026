@@ -1,0 +1,1359 @@
+INFO:__main__:Starting weather data ingestion from 2026-01-01 to 2026-02-28
+INFO:__main__:Starting ingestion for date: 2026-01-01
+INFO:api_client:Fetching air-temperature data for 2026-01-01
+INFO:api_client:Fetching relative-humidity data for 2026-01-01
+INFO:api_client:Fetching rainfall data for 2026-01-01
+INFO:api_client:Fetching wind-speed data for 2026-01-01
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-01
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-01
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-01
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-01
+INFO:loaders:Saved 1475 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-01.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-01.parquet
+INFO:loaders:Saved 325 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-01.parquet
+INFO:loaders:Saved 325 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-01.parquet
+INFO:loaders:Loaded 1475 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1475 records for rainfall
+INFO:loaders:Loaded 325 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 325 records for relative-humidity
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Loaded 325 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 325 records for air-temperature
+INFO:loaders:Total records loaded: 2475
+INFO:__main__:Completed ingestion for date: 2026-01-01
+INFO:__main__:Starting ingestion for date: 2026-01-02
+INFO:api_client:Fetching air-temperature data for 2026-01-02
+INFO:api_client:Fetching relative-humidity data for 2026-01-02
+INFO:api_client:Fetching rainfall data for 2026-01-02
+INFO:api_client:Fetching wind-speed data for 2026-01-02
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-02
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-02
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-02
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-02
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-02.parquet
+INFO:loaders:Saved 1500 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-02.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-02.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-02.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Loaded 1500 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1500 records for rainfall
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Total records loaded: 2550
+INFO:__main__:Completed ingestion for date: 2026-01-02
+INFO:__main__:Starting ingestion for date: 2026-01-03
+INFO:api_client:Fetching air-temperature data for 2026-01-03
+INFO:api_client:Fetching relative-humidity data for 2026-01-03
+INFO:api_client:Fetching rainfall data for 2026-01-03
+INFO:api_client:Fetching wind-speed data for 2026-01-03
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-03
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-03
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-03
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-03
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-03.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-03.parquet
+INFO:loaders:Saved 1500 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-03.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-03.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Loaded 1500 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1500 records for rainfall
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Total records loaded: 2550
+INFO:__main__:Completed ingestion for date: 2026-01-03
+INFO:__main__:Starting ingestion for date: 2026-01-04
+INFO:api_client:Fetching air-temperature data for 2026-01-04
+INFO:api_client:Fetching relative-humidity data for 2026-01-04
+INFO:api_client:Fetching rainfall data for 2026-01-04
+INFO:api_client:Fetching wind-speed data for 2026-01-04
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-04
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-04
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-04
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-04
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-04.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-04.parquet
+INFO:loaders:Saved 1500 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-04.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-04.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Loaded 1500 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1500 records for rainfall
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Total records loaded: 2550
+INFO:__main__:Completed ingestion for date: 2026-01-04
+INFO:__main__:Starting ingestion for date: 2026-01-05
+INFO:api_client:Fetching air-temperature data for 2026-01-05
+INFO:api_client:Fetching relative-humidity data for 2026-01-05
+INFO:api_client:Fetching rainfall data for 2026-01-05
+INFO:api_client:Fetching wind-speed data for 2026-01-05
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-05
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-05
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-05
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-05
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-05.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-05.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-05.parquet
+INFO:loaders:Saved 1474 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-05.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Loaded 1474 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1474 records for rainfall
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Total records loaded: 2524
+INFO:__main__:Completed ingestion for date: 2026-01-05
+INFO:__main__:Starting ingestion for date: 2026-01-06
+INFO:api_client:Fetching air-temperature data for 2026-01-06
+INFO:api_client:Fetching relative-humidity data for 2026-01-06
+INFO:api_client:Fetching rainfall data for 2026-01-06
+INFO:api_client:Fetching wind-speed data for 2026-01-06
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-06
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-06
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-06
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-06
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-06.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-06.parquet
+INFO:loaders:Saved 1500 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-06.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-06.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Loaded 1500 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1500 records for rainfall
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Total records loaded: 2550
+INFO:__main__:Completed ingestion for date: 2026-01-06
+INFO:__main__:Starting ingestion for date: 2026-01-07
+INFO:api_client:Fetching air-temperature data for 2026-01-07
+INFO:api_client:Fetching relative-humidity data for 2026-01-07
+INFO:api_client:Fetching rainfall data for 2026-01-07
+INFO:api_client:Fetching wind-speed data for 2026-01-07
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-07
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-07
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-07
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-07
+INFO:loaders:Saved 1500 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-07.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-07.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-07.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-07.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Loaded 1500 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1500 records for rainfall
+INFO:loaders:Total records loaded: 2550
+INFO:__main__:Completed ingestion for date: 2026-01-07
+INFO:__main__:Starting ingestion for date: 2026-01-08
+INFO:api_client:Fetching air-temperature data for 2026-01-08
+INFO:api_client:Fetching relative-humidity data for 2026-01-08
+INFO:api_client:Fetching rainfall data for 2026-01-08
+INFO:api_client:Fetching wind-speed data for 2026-01-08
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-08
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-08
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-08
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-08
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-08.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-08.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-08.parquet
+INFO:loaders:Saved 1500 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-08.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Loaded 1500 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1500 records for rainfall
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Total records loaded: 2550
+INFO:__main__:Completed ingestion for date: 2026-01-08
+INFO:__main__:Starting ingestion for date: 2026-01-09
+INFO:api_client:Fetching air-temperature data for 2026-01-09
+INFO:api_client:Fetching relative-humidity data for 2026-01-09
+INFO:api_client:Fetching rainfall data for 2026-01-09
+INFO:api_client:Fetching wind-speed data for 2026-01-09
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-09
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-09
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-09
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-09
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-09.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-09.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-09.parquet
+INFO:loaders:Saved 1500 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-09.parquet
+INFO:loaders:Loaded 1500 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1500 records for rainfall
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Total records loaded: 2550
+INFO:__main__:Completed ingestion for date: 2026-01-09
+INFO:__main__:Starting ingestion for date: 2026-01-10
+INFO:api_client:Fetching air-temperature data for 2026-01-10
+INFO:api_client:Fetching relative-humidity data for 2026-01-10
+INFO:api_client:Fetching rainfall data for 2026-01-10
+INFO:api_client:Fetching wind-speed data for 2026-01-10
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-10
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-10
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-10
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-10
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-10.parquet
+INFO:loaders:Saved 1500 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-10.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-10.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-10.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Loaded 1500 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1500 records for rainfall
+INFO:loaders:Total records loaded: 2550
+INFO:__main__:Completed ingestion for date: 2026-01-10
+INFO:__main__:Starting ingestion for date: 2026-01-11
+INFO:api_client:Fetching air-temperature data for 2026-01-11
+INFO:api_client:Fetching relative-humidity data for 2026-01-11
+INFO:api_client:Fetching rainfall data for 2026-01-11
+INFO:api_client:Fetching wind-speed data for 2026-01-11
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-11
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-11
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-11
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-11
+INFO:loaders:Saved 325 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-11.parquet
+INFO:loaders:Saved 325 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-11.parquet
+INFO:loaders:Saved 1475 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-11.parquet
+INFO:loaders:Saved 325 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-11.parquet
+INFO:loaders:Loaded 325 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 325 records for wind-speed
+INFO:loaders:Loaded 1475 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1475 records for rainfall
+INFO:loaders:Loaded 325 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 325 records for relative-humidity
+INFO:loaders:Loaded 325 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 325 records for air-temperature
+INFO:loaders:Total records loaded: 2450
+INFO:__main__:Completed ingestion for date: 2026-01-11
+INFO:__main__:Starting ingestion for date: 2026-01-12
+INFO:api_client:Fetching air-temperature data for 2026-01-12
+INFO:api_client:Fetching relative-humidity data for 2026-01-12
+INFO:api_client:Fetching rainfall data for 2026-01-12
+INFO:api_client:Fetching wind-speed data for 2026-01-12
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-12
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-12
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-12
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-12
+INFO:loaders:Saved 325 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-12.parquet
+INFO:loaders:Saved 325 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-12.parquet
+INFO:loaders:Saved 1500 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-12.parquet
+INFO:loaders:Saved 325 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-12.parquet
+INFO:loaders:Loaded 325 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 325 records for relative-humidity
+INFO:loaders:Loaded 325 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 325 records for air-temperature
+INFO:loaders:Loaded 1500 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1500 records for rainfall
+INFO:loaders:Loaded 325 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 325 records for wind-speed
+INFO:loaders:Total records loaded: 2475
+INFO:__main__:Completed ingestion for date: 2026-01-12
+INFO:__main__:Starting ingestion for date: 2026-01-13
+INFO:api_client:Fetching air-temperature data for 2026-01-13
+INFO:api_client:Fetching relative-humidity data for 2026-01-13
+INFO:api_client:Fetching rainfall data for 2026-01-13
+INFO:api_client:Fetching wind-speed data for 2026-01-13
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-13
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-13
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-13
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-13
+INFO:loaders:Saved 325 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-13.parquet
+INFO:loaders:Saved 325 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-13.parquet
+INFO:loaders:Saved 325 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-13.parquet
+INFO:loaders:Saved 1500 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-13.parquet
+INFO:loaders:Loaded 325 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 325 records for relative-humidity
+INFO:loaders:Loaded 325 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 325 records for air-temperature
+INFO:loaders:Loaded 325 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 325 records for wind-speed
+INFO:loaders:Loaded 1500 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1500 records for rainfall
+INFO:loaders:Total records loaded: 2475
+INFO:__main__:Completed ingestion for date: 2026-01-13
+INFO:__main__:Starting ingestion for date: 2026-01-14
+INFO:api_client:Fetching air-temperature data for 2026-01-14
+INFO:api_client:Fetching relative-humidity data for 2026-01-14
+INFO:api_client:Fetching rainfall data for 2026-01-14
+INFO:api_client:Fetching wind-speed data for 2026-01-14
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-14
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-14
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-14
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-14
+INFO:loaders:Saved 325 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-14.parquet
+INFO:loaders:Saved 325 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-14.parquet
+INFO:loaders:Saved 1500 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-14.parquet
+INFO:loaders:Saved 325 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-14.parquet
+INFO:loaders:Loaded 325 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 325 records for air-temperature
+INFO:loaders:Loaded 325 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 325 records for wind-speed
+INFO:loaders:Loaded 1500 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1500 records for rainfall
+INFO:loaders:Loaded 325 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 325 records for relative-humidity
+INFO:loaders:Total records loaded: 2475
+INFO:__main__:Completed ingestion for date: 2026-01-14
+INFO:__main__:Starting ingestion for date: 2026-01-15
+INFO:api_client:Fetching air-temperature data for 2026-01-15
+INFO:api_client:Fetching relative-humidity data for 2026-01-15
+INFO:api_client:Fetching rainfall data for 2026-01-15
+INFO:api_client:Fetching wind-speed data for 2026-01-15
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-15
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-15
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-15
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-15
+INFO:loaders:Saved 325 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-15.parquet
+INFO:loaders:Saved 1500 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-15.parquet
+INFO:loaders:Saved 325 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-15.parquet
+INFO:loaders:Saved 325 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-15.parquet
+INFO:loaders:Loaded 325 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 325 records for relative-humidity
+INFO:loaders:Loaded 1500 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1500 records for rainfall
+INFO:loaders:Loaded 325 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 325 records for wind-speed
+INFO:loaders:Loaded 325 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 325 records for air-temperature
+INFO:loaders:Total records loaded: 2475
+INFO:__main__:Completed ingestion for date: 2026-01-15
+INFO:__main__:Starting ingestion for date: 2026-01-16
+INFO:api_client:Fetching air-temperature data for 2026-01-16
+INFO:api_client:Fetching relative-humidity data for 2026-01-16
+INFO:api_client:Fetching rainfall data for 2026-01-16
+INFO:api_client:Fetching wind-speed data for 2026-01-16
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-16
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-16
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-16
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-16
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-16.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-16.parquet
+INFO:loaders:Saved 1525 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-16.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-16.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Loaded 1525 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1525 records for rainfall
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Total records loaded: 2575
+INFO:__main__:Completed ingestion for date: 2026-01-16
+INFO:__main__:Starting ingestion for date: 2026-01-17
+INFO:api_client:Fetching air-temperature data for 2026-01-17
+INFO:api_client:Fetching relative-humidity data for 2026-01-17
+INFO:api_client:Fetching rainfall data for 2026-01-17
+INFO:api_client:Fetching wind-speed data for 2026-01-17
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-17
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-17
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-17
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-17
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-17.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-17.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-17.parquet
+INFO:loaders:Saved 1525 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-17.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Loaded 1525 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1525 records for rainfall
+INFO:loaders:Total records loaded: 2575
+INFO:__main__:Completed ingestion for date: 2026-01-17
+INFO:__main__:Starting ingestion for date: 2026-01-18
+INFO:api_client:Fetching air-temperature data for 2026-01-18
+INFO:api_client:Fetching relative-humidity data for 2026-01-18
+INFO:api_client:Fetching rainfall data for 2026-01-18
+INFO:api_client:Fetching wind-speed data for 2026-01-18
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-18
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-18
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-18
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-18
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-18.parquet
+INFO:loaders:Saved 1525 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-18.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-18.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-18.parquet
+INFO:loaders:Loaded 1525 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1525 records for rainfall
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Total records loaded: 2575
+INFO:__main__:Completed ingestion for date: 2026-01-18
+INFO:__main__:Starting ingestion for date: 2026-01-19
+INFO:api_client:Fetching air-temperature data for 2026-01-19
+INFO:api_client:Fetching relative-humidity data for 2026-01-19
+INFO:api_client:Fetching rainfall data for 2026-01-19
+INFO:api_client:Fetching wind-speed data for 2026-01-19
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-19
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-19
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-19
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-19
+INFO:loaders:Saved 1525 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-19.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-19.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-19.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-19.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Loaded 1525 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1525 records for rainfall
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Total records loaded: 2575
+INFO:__main__:Completed ingestion for date: 2026-01-19
+INFO:__main__:Starting ingestion for date: 2026-01-20
+INFO:api_client:Fetching air-temperature data for 2026-01-20
+INFO:api_client:Fetching relative-humidity data for 2026-01-20
+INFO:api_client:Fetching rainfall data for 2026-01-20
+INFO:api_client:Fetching wind-speed data for 2026-01-20
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-20
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-20
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-20
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-20
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-20.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-20.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-20.parquet
+INFO:loaders:Saved 1523 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-20.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Loaded 1523 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1523 records for rainfall
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Total records loaded: 2573
+INFO:__main__:Completed ingestion for date: 2026-01-20
+INFO:__main__:Starting ingestion for date: 2026-01-21
+INFO:api_client:Fetching air-temperature data for 2026-01-21
+INFO:api_client:Fetching relative-humidity data for 2026-01-21
+INFO:api_client:Fetching rainfall data for 2026-01-21
+INFO:api_client:Fetching wind-speed data for 2026-01-21
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-21
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-21
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-21
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-21
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-21.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-21.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-21.parquet
+INFO:loaders:Saved 1525 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-21.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Loaded 1525 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1525 records for rainfall
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Total records loaded: 2575
+INFO:__main__:Completed ingestion for date: 2026-01-21
+INFO:__main__:Starting ingestion for date: 2026-01-22
+INFO:api_client:Fetching air-temperature data for 2026-01-22
+INFO:api_client:Fetching relative-humidity data for 2026-01-22
+INFO:api_client:Fetching rainfall data for 2026-01-22
+INFO:api_client:Fetching wind-speed data for 2026-01-22
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-22
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-22
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-22
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-22
+INFO:loaders:Saved 349 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-22.parquet
+INFO:loaders:Saved 1519 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-22.parquet
+INFO:loaders:Saved 349 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-22.parquet
+INFO:loaders:Saved 349 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-22.parquet
+INFO:loaders:Loaded 349 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 349 records for relative-humidity
+INFO:loaders:Loaded 349 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 349 records for air-temperature
+INFO:loaders:Loaded 349 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 349 records for wind-speed
+INFO:loaders:Loaded 1519 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1519 records for rainfall
+INFO:loaders:Total records loaded: 2566
+INFO:__main__:Completed ingestion for date: 2026-01-22
+INFO:__main__:Starting ingestion for date: 2026-01-23
+INFO:api_client:Fetching air-temperature data for 2026-01-23
+INFO:api_client:Fetching relative-humidity data for 2026-01-23
+INFO:api_client:Fetching rainfall data for 2026-01-23
+INFO:api_client:Fetching wind-speed data for 2026-01-23
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-23
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-23
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-23
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-23
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-23.parquet
+INFO:loaders:Saved 1525 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-23.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-23.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-23.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Loaded 1525 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1525 records for rainfall
+INFO:loaders:Total records loaded: 2575
+INFO:__main__:Completed ingestion for date: 2026-01-23
+INFO:__main__:Starting ingestion for date: 2026-01-24
+INFO:api_client:Fetching air-temperature data for 2026-01-24
+INFO:api_client:Fetching relative-humidity data for 2026-01-24
+INFO:api_client:Fetching rainfall data for 2026-01-24
+INFO:api_client:Fetching wind-speed data for 2026-01-24
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-24
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-24
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-24
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-24
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-24.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-24.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-24.parquet
+INFO:loaders:Saved 1525 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-24.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Loaded 1525 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1525 records for rainfall
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Total records loaded: 2575
+INFO:__main__:Completed ingestion for date: 2026-01-24
+INFO:__main__:Starting ingestion for date: 2026-01-25
+INFO:api_client:Fetching air-temperature data for 2026-01-25
+INFO:api_client:Fetching relative-humidity data for 2026-01-25
+INFO:api_client:Fetching rainfall data for 2026-01-25
+INFO:api_client:Fetching wind-speed data for 2026-01-25
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-25
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-25
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-25
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-25
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-25.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-25.parquet
+INFO:loaders:Saved 1525 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-25.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-25.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Loaded 1525 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1525 records for rainfall
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Total records loaded: 2575
+INFO:__main__:Completed ingestion for date: 2026-01-25
+INFO:__main__:Starting ingestion for date: 2026-01-26
+INFO:api_client:Fetching air-temperature data for 2026-01-26
+INFO:api_client:Fetching relative-humidity data for 2026-01-26
+INFO:api_client:Fetching rainfall data for 2026-01-26
+INFO:api_client:Fetching wind-speed data for 2026-01-26
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-26
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-26
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-26
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-26
+INFO:loaders:Saved 1525 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-26.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-26.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-26.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-26.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Loaded 1525 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1525 records for rainfall
+INFO:loaders:Total records loaded: 2575
+INFO:__main__:Completed ingestion for date: 2026-01-26
+INFO:__main__:Starting ingestion for date: 2026-01-27
+INFO:api_client:Fetching air-temperature data for 2026-01-27
+INFO:api_client:Fetching relative-humidity data for 2026-01-27
+INFO:api_client:Fetching rainfall data for 2026-01-27
+INFO:api_client:Fetching wind-speed data for 2026-01-27
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-27
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-27
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-27
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-27
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-27.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-27.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-27.parquet
+INFO:loaders:Saved 1525 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-27.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Loaded 1525 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1525 records for rainfall
+INFO:loaders:Total records loaded: 2575
+INFO:__main__:Completed ingestion for date: 2026-01-27
+INFO:__main__:Starting ingestion for date: 2026-01-28
+INFO:api_client:Fetching air-temperature data for 2026-01-28
+INFO:api_client:Fetching relative-humidity data for 2026-01-28
+INFO:api_client:Fetching rainfall data for 2026-01-28
+INFO:api_client:Fetching wind-speed data for 2026-01-28
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-28
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-28
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-28
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-28
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-28.parquet
+INFO:loaders:Saved 1525 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-28.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-28.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-28.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Loaded 1525 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1525 records for rainfall
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Total records loaded: 2575
+INFO:__main__:Completed ingestion for date: 2026-01-28
+INFO:__main__:Starting ingestion for date: 2026-01-29
+INFO:api_client:Fetching air-temperature data for 2026-01-29
+INFO:api_client:Fetching relative-humidity data for 2026-01-29
+INFO:api_client:Fetching rainfall data for 2026-01-29
+INFO:api_client:Fetching wind-speed data for 2026-01-29
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-29
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-29
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-29
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-29
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-29.parquet
+INFO:loaders:Saved 1525 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-29.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-29.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-29.parquet
+INFO:loaders:Loaded 1525 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1525 records for rainfall
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Total records loaded: 2575
+INFO:__main__:Completed ingestion for date: 2026-01-29
+INFO:__main__:Starting ingestion for date: 2026-01-30
+INFO:api_client:Fetching air-temperature data for 2026-01-30
+INFO:api_client:Fetching relative-humidity data for 2026-01-30
+INFO:api_client:Fetching rainfall data for 2026-01-30
+INFO:api_client:Fetching wind-speed data for 2026-01-30
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-30
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-30
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-30
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-30
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-30.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-30.parquet
+INFO:loaders:Saved 1525 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-30.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-30.parquet
+INFO:loaders:Loaded 1525 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1525 records for rainfall
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Total records loaded: 2575
+INFO:__main__:Completed ingestion for date: 2026-01-30
+INFO:__main__:Starting ingestion for date: 2026-01-31
+INFO:api_client:Fetching air-temperature data for 2026-01-31
+INFO:api_client:Fetching relative-humidity data for 2026-01-31
+INFO:api_client:Fetching rainfall data for 2026-01-31
+INFO:api_client:Fetching wind-speed data for 2026-01-31
+INFO:api_client:Fetched 25 readings for rainfall on 2026-01-31
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-01-31
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-01-31
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-01-31
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-01-31.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-01-31.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-01-31.parquet
+INFO:loaders:Saved 1525 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-01-31.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Loaded 1525 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1525 records for rainfall
+INFO:loaders:Total records loaded: 2575
+INFO:__main__:Completed ingestion for date: 2026-01-31
+INFO:__main__:Starting ingestion for date: 2026-02-01
+INFO:api_client:Fetching air-temperature data for 2026-02-01
+INFO:api_client:Fetching relative-humidity data for 2026-02-01
+INFO:api_client:Fetching rainfall data for 2026-02-01
+INFO:api_client:Fetching wind-speed data for 2026-02-01
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-01
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-01
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-01
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-01
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-01.parquet
+INFO:loaders:Saved 1525 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-01.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-01.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-01.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Loaded 1525 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1525 records for rainfall
+INFO:loaders:Loaded 350 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 350 records for air-temperature
+INFO:loaders:Loaded 350 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 350 records for wind-speed
+INFO:loaders:Total records loaded: 2575
+INFO:__main__:Completed ingestion for date: 2026-02-01
+INFO:__main__:Starting ingestion for date: 2026-02-02
+INFO:api_client:Fetching air-temperature data for 2026-02-02
+INFO:api_client:Fetching relative-humidity data for 2026-02-02
+INFO:api_client:Fetching rainfall data for 2026-02-02
+INFO:api_client:Fetching wind-speed data for 2026-02-02
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-02
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-02
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-02
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-02
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-02.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-02.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-02.parquet
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-02.parquet
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-02
+INFO:__main__:Starting ingestion for date: 2026-02-03
+INFO:api_client:Fetching air-temperature data for 2026-02-03
+INFO:api_client:Fetching relative-humidity data for 2026-02-03
+INFO:api_client:Fetching rainfall data for 2026-02-03
+INFO:api_client:Fetching wind-speed data for 2026-02-03
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-03
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-03
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-03
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-03
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-03.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-03.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-03.parquet
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-03.parquet
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-03
+INFO:__main__:Starting ingestion for date: 2026-02-04
+INFO:api_client:Fetching air-temperature data for 2026-02-04
+INFO:api_client:Fetching relative-humidity data for 2026-02-04
+INFO:api_client:Fetching rainfall data for 2026-02-04
+INFO:api_client:Fetching wind-speed data for 2026-02-04
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-04
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-04
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-04
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-04
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-04.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-04.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-04.parquet
+INFO:loaders:Saved 1549 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-04.parquet
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Loaded 1549 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1549 records for rainfall
+INFO:loaders:Total records loaded: 2674
+INFO:__main__:Completed ingestion for date: 2026-02-04
+INFO:__main__:Starting ingestion for date: 2026-02-05
+INFO:api_client:Fetching air-temperature data for 2026-02-05
+INFO:api_client:Fetching relative-humidity data for 2026-02-05
+INFO:api_client:Fetching rainfall data for 2026-02-05
+INFO:api_client:Fetching wind-speed data for 2026-02-05
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-05
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-05
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-05
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-05
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-05.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-05.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-05.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-05.parquet
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-05
+INFO:__main__:Starting ingestion for date: 2026-02-06
+INFO:api_client:Fetching air-temperature data for 2026-02-06
+INFO:api_client:Fetching relative-humidity data for 2026-02-06
+INFO:api_client:Fetching rainfall data for 2026-02-06
+INFO:api_client:Fetching wind-speed data for 2026-02-06
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-06
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-06
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-06
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-06
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-06.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-06.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-06.parquet
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-06.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Total records loaded: 2650
+INFO:__main__:Completed ingestion for date: 2026-02-06
+INFO:__main__:Starting ingestion for date: 2026-02-07
+INFO:api_client:Fetching air-temperature data for 2026-02-07
+INFO:api_client:Fetching relative-humidity data for 2026-02-07
+INFO:api_client:Fetching rainfall data for 2026-02-07
+INFO:api_client:Fetching wind-speed data for 2026-02-07
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-07
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-07
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-07
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-07
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-07.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-07.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-07.parquet
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-07.parquet
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-07
+INFO:__main__:Starting ingestion for date: 2026-02-08
+INFO:api_client:Fetching air-temperature data for 2026-02-08
+INFO:api_client:Fetching relative-humidity data for 2026-02-08
+INFO:api_client:Fetching rainfall data for 2026-02-08
+INFO:api_client:Fetching wind-speed data for 2026-02-08
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-08
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-08
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-08
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-08
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-08.parquet
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-08.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-08.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-08.parquet
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-08
+INFO:__main__:Starting ingestion for date: 2026-02-09
+INFO:api_client:Fetching air-temperature data for 2026-02-09
+INFO:api_client:Fetching relative-humidity data for 2026-02-09
+INFO:api_client:Fetching rainfall data for 2026-02-09
+INFO:api_client:Fetching wind-speed data for 2026-02-09
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-09
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-09
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-09
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-09
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-09.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-09.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-09.parquet
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-09.parquet
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-09
+INFO:__main__:Starting ingestion for date: 2026-02-10
+INFO:api_client:Fetching air-temperature data for 2026-02-10
+INFO:api_client:Fetching relative-humidity data for 2026-02-10
+INFO:api_client:Fetching rainfall data for 2026-02-10
+INFO:api_client:Fetching wind-speed data for 2026-02-10
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-10
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-10
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-10
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-10
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-10.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-10.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-10.parquet
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-10.parquet
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-10
+INFO:__main__:Starting ingestion for date: 2026-02-11
+INFO:api_client:Fetching air-temperature data for 2026-02-11
+INFO:api_client:Fetching relative-humidity data for 2026-02-11
+INFO:api_client:Fetching rainfall data for 2026-02-11
+INFO:api_client:Fetching wind-speed data for 2026-02-11
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-11
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-11
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-11
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-11
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-11.parquet
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-11.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-11.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-11.parquet
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-11
+INFO:__main__:Starting ingestion for date: 2026-02-12
+INFO:api_client:Fetching air-temperature data for 2026-02-12
+INFO:api_client:Fetching relative-humidity data for 2026-02-12
+INFO:api_client:Fetching rainfall data for 2026-02-12
+INFO:api_client:Fetching wind-speed data for 2026-02-12
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-12
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-12
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-12
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-12
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-12.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-12.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-12.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-12.parquet
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-12
+INFO:__main__:Starting ingestion for date: 2026-02-13
+INFO:api_client:Fetching air-temperature data for 2026-02-13
+INFO:api_client:Fetching relative-humidity data for 2026-02-13
+INFO:api_client:Fetching rainfall data for 2026-02-13
+INFO:api_client:Fetching wind-speed data for 2026-02-13
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-13
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-13
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-13
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-13
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-13.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-13.parquet
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-13.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-13.parquet
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-13
+INFO:__main__:Starting ingestion for date: 2026-02-14
+INFO:api_client:Fetching air-temperature data for 2026-02-14
+INFO:api_client:Fetching relative-humidity data for 2026-02-14
+INFO:api_client:Fetching rainfall data for 2026-02-14
+INFO:api_client:Fetching wind-speed data for 2026-02-14
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-14
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-14
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-14
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-14
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-14.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-14.parquet
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-14.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-14.parquet
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-14
+INFO:__main__:Starting ingestion for date: 2026-02-15
+INFO:api_client:Fetching air-temperature data for 2026-02-15
+INFO:api_client:Fetching relative-humidity data for 2026-02-15
+INFO:api_client:Fetching rainfall data for 2026-02-15
+INFO:api_client:Fetching wind-speed data for 2026-02-15
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-15
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-15
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-15
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-15
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-15.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-15.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-15.parquet
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-15.parquet
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-15
+INFO:__main__:Starting ingestion for date: 2026-02-16
+INFO:api_client:Fetching air-temperature data for 2026-02-16
+INFO:api_client:Fetching relative-humidity data for 2026-02-16
+INFO:api_client:Fetching rainfall data for 2026-02-16
+INFO:api_client:Fetching wind-speed data for 2026-02-16
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-16
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-16
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-16
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-16
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-16.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-16.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-16.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-16.parquet
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-16
+INFO:__main__:Starting ingestion for date: 2026-02-17
+INFO:api_client:Fetching air-temperature data for 2026-02-17
+INFO:api_client:Fetching relative-humidity data for 2026-02-17
+INFO:api_client:Fetching rainfall data for 2026-02-17
+INFO:api_client:Fetching wind-speed data for 2026-02-17
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-17
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-17
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-17
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-17
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-17.parquet
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-17.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-17.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-17.parquet
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-17
+INFO:__main__:Starting ingestion for date: 2026-02-18
+INFO:api_client:Fetching air-temperature data for 2026-02-18
+INFO:api_client:Fetching relative-humidity data for 2026-02-18
+INFO:api_client:Fetching rainfall data for 2026-02-18
+INFO:api_client:Fetching wind-speed data for 2026-02-18
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-18
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-18
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-18
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-18
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-18.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-18.parquet
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-18.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-18.parquet
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-18
+INFO:__main__:Starting ingestion for date: 2026-02-19
+INFO:api_client:Fetching air-temperature data for 2026-02-19
+INFO:api_client:Fetching relative-humidity data for 2026-02-19
+INFO:api_client:Fetching rainfall data for 2026-02-19
+INFO:api_client:Fetching wind-speed data for 2026-02-19
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-19
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-19
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-19
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-19
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-19.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-19.parquet
+INFO:loaders:Saved 1549 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-19.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-19.parquet
+INFO:loaders:Loaded 1549 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1549 records for rainfall
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Total records loaded: 2674
+INFO:__main__:Completed ingestion for date: 2026-02-19
+INFO:__main__:Starting ingestion for date: 2026-02-20
+INFO:api_client:Fetching air-temperature data for 2026-02-20
+INFO:api_client:Fetching relative-humidity data for 2026-02-20
+INFO:api_client:Fetching rainfall data for 2026-02-20
+INFO:api_client:Fetching wind-speed data for 2026-02-20
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-20
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-20
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-20
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-20
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-20.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-20.parquet
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-20.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-20.parquet
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-20
+INFO:__main__:Starting ingestion for date: 2026-02-21
+INFO:api_client:Fetching air-temperature data for 2026-02-21
+INFO:api_client:Fetching relative-humidity data for 2026-02-21
+INFO:api_client:Fetching rainfall data for 2026-02-21
+INFO:api_client:Fetching wind-speed data for 2026-02-21
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-21
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-21
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-21
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-21
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-21.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-21.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-21.parquet
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-21.parquet
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-21
+INFO:__main__:Starting ingestion for date: 2026-02-22
+INFO:api_client:Fetching air-temperature data for 2026-02-22
+INFO:api_client:Fetching relative-humidity data for 2026-02-22
+INFO:api_client:Fetching rainfall data for 2026-02-22
+INFO:api_client:Fetching wind-speed data for 2026-02-22
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-22
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-22
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-22
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-22
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-22.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-22.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-22.parquet
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-22.parquet
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-22
+INFO:__main__:Starting ingestion for date: 2026-02-23
+INFO:api_client:Fetching air-temperature data for 2026-02-23
+INFO:api_client:Fetching relative-humidity data for 2026-02-23
+INFO:api_client:Fetching rainfall data for 2026-02-23
+INFO:api_client:Fetching wind-speed data for 2026-02-23
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-23
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-23
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-23
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-23
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-23.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-23.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-23.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-23.parquet
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-23
+INFO:__main__:Starting ingestion for date: 2026-02-24
+INFO:api_client:Fetching air-temperature data for 2026-02-24
+INFO:api_client:Fetching relative-humidity data for 2026-02-24
+INFO:api_client:Fetching rainfall data for 2026-02-24
+INFO:api_client:Fetching wind-speed data for 2026-02-24
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-24
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-24
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-24
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-24
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-24.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-24.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-24.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-24.parquet
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-24
+INFO:__main__:Starting ingestion for date: 2026-02-25
+INFO:api_client:Fetching air-temperature data for 2026-02-25
+INFO:api_client:Fetching relative-humidity data for 2026-02-25
+INFO:api_client:Fetching rainfall data for 2026-02-25
+INFO:api_client:Fetching wind-speed data for 2026-02-25
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-25
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-25
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-25
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-25
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-25.parquet
+INFO:loaders:Saved 350 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-25.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-25.parquet
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-25.parquet
+INFO:loaders:Loaded 350 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 350 records for relative-humidity
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Total records loaded: 2650
+INFO:__main__:Completed ingestion for date: 2026-02-25
+INFO:__main__:Starting ingestion for date: 2026-02-26
+INFO:api_client:Fetching air-temperature data for 2026-02-26
+INFO:api_client:Fetching relative-humidity data for 2026-02-26
+INFO:api_client:Fetching rainfall data for 2026-02-26
+INFO:api_client:Fetching wind-speed data for 2026-02-26
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-26
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-26
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-26
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-26
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-26.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-26.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-26.parquet
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-26.parquet
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-26
+INFO:__main__:Starting ingestion for date: 2026-02-27
+INFO:api_client:Fetching air-temperature data for 2026-02-27
+INFO:api_client:Fetching relative-humidity data for 2026-02-27
+INFO:api_client:Fetching rainfall data for 2026-02-27
+INFO:api_client:Fetching wind-speed data for 2026-02-27
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-27
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-27
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-27
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-27
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-27.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-27.parquet
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-27.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-27.parquet
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-27
+INFO:__main__:Starting ingestion for date: 2026-02-28
+INFO:api_client:Fetching air-temperature data for 2026-02-28
+INFO:api_client:Fetching relative-humidity data for 2026-02-28
+INFO:api_client:Fetching rainfall data for 2026-02-28
+INFO:api_client:Fetching wind-speed data for 2026-02-28
+INFO:api_client:Fetched 25 readings for rainfall on 2026-02-28
+INFO:api_client:Fetched 25 readings for relative-humidity on 2026-02-28
+INFO:api_client:Fetched 25 readings for wind-speed on 2026-02-28
+INFO:api_client:Fetched 25 readings for air-temperature on 2026-02-28
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/wind-speed/2026-02-28.parquet
+INFO:loaders:Saved 1550 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/rainfall/2026-02-28.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/air-temperature/2026-02-28.parquet
+INFO:loaders:Saved 375 records to gs://proud-outrider-483901-c3-weather-raw-kfru2uzo/raw/relative-humidity/2026-02-28.parquet
+INFO:loaders:Loaded 375 records to weather_data.raw_relative_humidity
+INFO:loaders:Completed loading 375 records for relative-humidity
+INFO:loaders:Loaded 375 records to weather_data.raw_air_temperature
+INFO:loaders:Completed loading 375 records for air-temperature
+INFO:loaders:Loaded 1550 records to weather_data.raw_rainfall
+INFO:loaders:Completed loading 1550 records for rainfall
+INFO:loaders:Loaded 375 records to weather_data.raw_wind_speed
+INFO:loaders:Completed loading 375 records for wind-speed
+INFO:loaders:Total records loaded: 2675
+INFO:__main__:Completed ingestion for date: 2026-02-28
+INFO:__main__:Weather data ingestion completed!
