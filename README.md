@@ -324,6 +324,25 @@ For production workflows (e.g., year 2022 onwards), use Kestra to run the pipeli
    - Click **Execute**. 
 5. **Monitor Logs**: You can now watch the execution logs entirely from the Kestra UI under the **Logs** tab of that run!
 
+#### Step 10: Ingesting URA Master Plan Map Boundaries
+
+For geospatial visualizations, we also securely store the physical boundaries of Singapore's URA Planning Subzones. This data is largely static, so it runs locally on a separate standalone script.
+
+1. **Download the Data**:
+   Navigate to [URA Master Plan 2019 Subzone Boundary (No Sea)](https://data.gov.sg/datasets/d_8594ae9ff96d0c708bc2af633048edfb/view) on Data.gov.sg. Download the full **GeoJSON** format file.
+2. **Setup the File**:
+   Rename the downloaded file to `ura_mp19_subzone.geojson` and place it directly inside the `scripts/` folder of this repository.
+3. **Execute the Ingestion**:
+   ```bash
+   python scripts/ingest_map.py
+   ```
+   **What happens under the hood?**
+   * The script parses the raw GeoJSON FeatureCollection.
+   * It extracts property attributes (like SUBZONE_N) into specific columns.
+   * Crucially, it re-stringifies the coordinate geometry block back into raw JSON strings.
+   * It writes a `.parquet` payload to your GCS bucket under a new `map/` directory.
+   * It triggers a `pandas-gbq` load to automatically construct a `weather_data.map` BigQuery table.
+
 ### Common Development Tasks
 
 #### Adding a New Weather Metric
