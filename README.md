@@ -603,6 +603,149 @@ We use a Dimension Table to append Station names, latitudes, and longitudes to t
 
    FROM with_neighbors;
 
+
+
+
+
+
+
+
+
+
+   -- 8. Create table with geometry at different levels of map-drilldown
+   --    Region
+   --    Planning Area
+   --    Subzone
+   CREATE OR REPLACE TABLE `proud-outrider-483901-c3.weather_data.map_boundaries` AS
+   -- Level 1: Region (5 rows — coarsest)
+   SELECT
+   'region'          AS geo_level,
+   REGION_N          AS region_name,
+   CAST(NULL AS STRING) AS planning_area_name,
+   CAST(NULL AS STRING) AS subzone_name,
+   ST_UNION_AGG(
+      ST_GEOGFROMGEOJSON(geometry, make_valid => TRUE)
+   )                 AS geo
+   FROM `proud-outrider-483901-c3.weather_data.map`
+   GROUP BY REGION_N
+
+   UNION ALL
+
+   -- Level 2: Planning Area (~55 rows)
+   SELECT
+   'planning_area'   AS geo_level,
+   REGION_N          AS region_name,
+   PLN_AREA_N        AS planning_area_name,
+   CAST(NULL AS STRING) AS subzone_name,
+   ST_UNION_AGG(
+      ST_GEOGFROMGEOJSON(geometry, make_valid => TRUE)
+   )                 AS geo
+   FROM `proud-outrider-483901-c3.weather_data.map`
+   GROUP BY REGION_N, PLN_AREA_N
+
+   UNION ALL
+
+   -- Level 3: Subzone (~300+ rows — finest)
+   SELECT
+   'subzone'         AS geo_level,
+   REGION_N          AS region_name,
+   PLN_AREA_N        AS planning_area_name,
+   SUBZONE_N         AS subzone_name,
+   ST_GEOGFROMGEOJSON(geometry, make_valid => TRUE) AS geo  -- no aggregation needed
+   FROM `proud-outrider-483901-c3.weather_data.map`;
+
+
+
+
+
+
+
+
+
+
+   -- 9. Consolidated map view with aggregated metrics
+   CREATE OR REPLACE VIEW `proud-outrider-483901-c3.weather_data.vw_weather_map` AS
+   WITH daily_metrics AS (
+   SELECT
+      DATE(reading_timestamp) AS reading_date,
+      region_name,
+      planning_area_name,
+      subzone_name,
+      AVG(temperature)          AS avg_temperature,
+      AVG(humidity)             AS avg_humidity,
+      AVG(rainfall)             AS avg_rainfall,
+      AVG(wind_speed)           AS avg_wind_speed,
+      COUNT(DISTINCT station_id) AS station_count
+   FROM `proud-outrider-483901-c3.weather_data.unified_weather`
+   WHERE region_name IS NOT NULL
+   GROUP BY reading_date, region_name, planning_area_name, subzone_name
+   )
+
+   -- Region level
+   SELECT
+   'region'              AS geo_level,
+   d.reading_date,
+   d.region_name,
+   CAST(NULL AS STRING)  AS planning_area_name,
+   CAST(NULL AS STRING)  AS subzone_name,
+   AVG(d.avg_temperature)  AS avg_temperature,
+   AVG(d.avg_humidity)     AS avg_humidity,
+   AVG(d.avg_rainfall)     AS avg_rainfall,
+   AVG(d.avg_wind_speed)   AS avg_wind_speed,
+   SUM(d.station_count)    AS station_count,
+   -- Bigquery - Grouping by expressions of type GEOGRAPHY is not allowed
+   ANY_VALUE(map.geo)      AS geo
+   FROM daily_metrics d
+   JOIN `proud-outrider-483901-c3.weather_data.map_boundaries` map
+   ON  map.geo_level = 'region'
+   AND map.region_name = d.region_name
+   GROUP BY d.reading_date, d.region_name
+
+   UNION ALL
+
+   -- Planning area level
+   SELECT
+   'planning_area'       AS geo_level,
+   d.reading_date,
+   d.region_name,
+   d.planning_area_name,
+   CAST(NULL AS STRING)  AS subzone_name,
+   AVG(d.avg_temperature)  AS avg_temperature,
+   AVG(d.avg_humidity)     AS avg_humidity,
+   AVG(d.avg_rainfall)     AS avg_rainfall,
+   AVG(d.avg_wind_speed)   AS avg_wind_speed,
+   SUM(d.station_count)    AS station_count,
+   -- Bigquery - Grouping by expressions of type GEOGRAPHY is not allowed
+   ANY_VALUE(map.geo)      AS geo
+   FROM daily_metrics d
+   JOIN `proud-outrider-483901-c3.weather_data.map_boundaries` map
+   ON  map.geo_level = 'planning_area'
+   AND map.region_name = d.region_name
+   AND map.planning_area_name = d.planning_area_name
+   GROUP BY d.reading_date, d.region_name, d.planning_area_name
+
+   UNION ALL
+
+   -- Subzone level
+   SELECT
+   'subzone'             AS geo_level,
+   d.reading_date,
+   d.region_name,
+   d.planning_area_name,
+   d.subzone_name,
+   d.avg_temperature,
+   d.avg_humidity,
+   d.avg_rainfall,
+   d.avg_wind_speed,
+   d.station_count,
+   -- no aggregation needed for 'geo'
+   map.geo
+   FROM daily_metrics d
+   JOIN `proud-outrider-483901-c3.weather_data.map_boundaries` map
+   ON  map.geo_level = 'subzone'
+   AND map.region_name = d.region_name
+   AND map.planning_area_name = d.planning_area_name
+   AND map.subzone_name = d.subzone_name;
    ```
    
 
