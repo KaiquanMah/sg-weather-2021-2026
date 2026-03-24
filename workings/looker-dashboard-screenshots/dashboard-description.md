@@ -1,7 +1,9 @@
 ## **DASHBOARD OVERVIEW**
 
 ### **Dashboard Structure:**
-The dashboard provides multi-level geographic and temporal analysis of Singapore's weather data from 2021-2026, with filters for specific time periods (currently showing 2025 data in the geographic views).
+The Looker Studio dashboard provides visualisation of weather metrics at various geographc levels (region, planning area, subzone) and temporal levels (Monthly (in a year and across years), quarterly, day-of-week, day-of-month).
+
+The period of analysis is from 2021 to 2026, with filters for specific time periods. In the screenshots, I have filtered for year 2025 in the geographic views.
 
 ---
 
