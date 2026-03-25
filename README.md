@@ -49,7 +49,13 @@ graph LR
 
 ## Dataset: Singapore Real-Time Weather APIs (data.gov.sg)
 
+The dataset of choice was the 4 weather APIs from data.gov.sg. The API dataset was chosen for
+* its granularity in both time (down to the minute or 5-minute intervals) and location (weather stations across the island)
+* the availability of historical data from 2021-01-01 to 2026-02-28
+* familiarising myself with ingesting data from API data sources, instead of ingesting data only from files
+
 All 4 APIs share an identical request/response contract. Only the 'endpoint path' and 'measurement unit' differ.
+
 
 ### Common API Characteristics
 
