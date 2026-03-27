@@ -1,6 +1,4 @@
-# Singapore Weather Analytics Pipeline (2021–2026)
-
-Data Engineering Zoomcamp 2026 Project — Ingestion and Visualisation of Historical Weather Data from data.gov.sg APIs
+# Data Engineering Zoomcamp 2026 Project: Singapore Weather Data Pipeline and Dashboard (2021–2026)
 
 ---
 
