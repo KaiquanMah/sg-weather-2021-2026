@@ -1,14 +1,14 @@
 import unittest
 from unittest.mock import Mock, patch
 from datetime import datetime
-from scripts.api_client import WeatherAPIClient
-from scripts.config import Config
+from api_client import WeatherAPIClient
+from config import Config
 
 class TestWeatherAPIClient(unittest.TestCase):
     def setUp(self):
         self.client = WeatherAPIClient()
 
-    @patch('scripts.api_client.requests.get')
+    @patch('api_client.requests.get')
     def test_make_request_success(self, mock_get):
         # Arrange
         mock_response = Mock()
@@ -23,7 +23,7 @@ class TestWeatherAPIClient(unittest.TestCase):
         self.assertEqual(result, {"data": {"readings": []}})
         mock_get.assert_called_once()
 
-    @patch('scripts.api_client.requests.get')
+    @patch('api_client.requests.get')
     def test_make_request_429_retry(self, mock_get):
         # Arrange
         first_response = Mock()
@@ -40,7 +40,7 @@ class TestWeatherAPIClient(unittest.TestCase):
         self.assertEqual(result, {"data": {"readings": []}})
         self.assertEqual(mock_get.call_count, 2)
 
-    @patch('scripts.api_client.requests.get')
+    @patch('api_client.requests.get')
     def test_make_request_404_empty_response(self, mock_get):
         # Arrange
         mock_response = Mock()

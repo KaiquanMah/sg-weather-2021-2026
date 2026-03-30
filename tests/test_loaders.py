@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import Mock, patch, MagicMock
-from scripts.loaders import DataLoader
-from scripts.config import Config
+from loaders import DataLoader
+from config import Config
 import pandas as pd
 
 class TestDataLoader(unittest.TestCase):
@@ -17,8 +17,8 @@ class TestDataLoader(unittest.TestCase):
         
         self.loader = DataLoader(bq_client=mock_bq_client, storage_client=mock_storage_client)
 
-    @patch('scripts.loaders.pd.DataFrame')
-    @patch('scripts.loaders.storage.Client')
+    @patch('loaders.pd.DataFrame')
+    @patch('loaders.storage.Client')
     def test_save_to_gcs(self, mock_storage_client, mock_df):
         # Arrange
         test_data = [{"timestamp": "2023-01-01T00:00:00", "station_id": "S01", "value": 25.0}]
@@ -40,7 +40,7 @@ class TestDataLoader(unittest.TestCase):
         mock_df_instance.to_parquet.assert_called_once_with(index=False)
         mock_blob.upload_from_string.assert_called_once()
 
-    @patch('scripts.loaders.pd.DataFrame')
+    @patch('loaders.pd.DataFrame')
     def test_load_to_bigquery(self, mock_df):
         # Arrange
         test_data = [{"timestamp": "2023-01-01T00:00:00", "station_id": "S01", "temperature": 25.0}]
