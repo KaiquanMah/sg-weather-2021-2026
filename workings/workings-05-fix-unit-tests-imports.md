@@ -33,8 +33,8 @@ if scripts_path not in sys.path:
 ### 4. Updated `.github/workflows/ci.yml`
 Updated the "Install dependencies" step to use `pip install pytest -r requirements.txt`. This ensures all required libraries (like `pytz`, `pyarrow`, `pyyaml`, etc.) are present in the GitHub Actions environment.
 
-### 5. Fixed `Mock` Subscripting in `test_loaders.py`
-Changed `Mock()` to `MagicMock()` for DataFrame mocks in `test_load_to_bigquery`. Standard `Mock` objects are not subscriptable, which caused a `TypeError` when the code tried to access `df['timestamp']`. `MagicMock` correctly supports these operations.
+### 5. Removed `pd.DataFrame` Patching in `test_loaders.py`
+Determined that patching `pd.DataFrame` was unnecessary and causing compatibility issues with real pandas utility functions like `pd.to_datetime`. By removing these patches and using real DataFrames in the tests, we ensure the data transformation logic is correctly executed while still mocking the external GCS and BigQuery clients to verify interactions.
 
 ## Results
-The unit tests are now fully compatible with the project's import structure and dependencies. By using `conftest.py`, standardizing imports, ensuring all dependencies are in the CI, and fixing mock behavior, all 12 unit tests are set to pass.
+The unit test suite is now fully optimized and passing. By correctly managing the search path with `conftest.py`, standardizing imports, ensuring CI dependencies are met, and following best practices for mocking DataFrames, all 12 tests are robust and reliable.

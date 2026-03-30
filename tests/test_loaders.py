@@ -17,18 +17,14 @@ class TestDataLoader(unittest.TestCase):
         
         self.loader = DataLoader(bq_client=mock_bq_client, storage_client=mock_storage_client)
 
-    @patch('loaders.pd.DataFrame')
     @patch('loaders.storage.Client')
-    def test_save_to_gcs(self, mock_storage_client, mock_df):
+    def test_save_to_gcs(self, mock_storage_client):
         # Arrange
         test_data = [{"timestamp": "2023-01-01T00:00:00", "station_id": "S01", "value": 25.0}]
         mock_bucket = Mock()
         mock_blob = Mock()
         self.loader.storage_client.bucket.return_value = mock_bucket
         mock_bucket.blob.return_value = mock_blob
-        mock_df_instance = MagicMock()
-        mock_df.return_value = mock_df_instance
-        mock_df_instance.to_parquet.return_value = b"fake_parquet_data"
 
         # Act
         result = self.loader.save_to_gcs(test_data, "air-temperature/2023-01-01")
@@ -36,17 +32,11 @@ class TestDataLoader(unittest.TestCase):
         # Assert
         self.assertTrue(result.startswith("gs://"))
         self.assertIn("air-temperature/2023-01-01.parquet", result)
-        mock_df.assert_called_once_with(test_data)
-        mock_df_instance.to_parquet.assert_called_once_with(index=False)
         mock_blob.upload_from_string.assert_called_once()
 
-    @patch('loaders.pd.DataFrame')
-    def test_load_to_bigquery(self, mock_df):
+    def test_load_to_bigquery(self):
         # Arrange
         test_data = [{"timestamp": "2023-01-01T00:00:00", "station_id": "S01", "temperature": 25.0}]
-        mock_df_instance = MagicMock()
-        mock_df_instance.columns = ['timestamp', 'station_id', 'temperature', 'ingest_timestamp']
-        mock_df.return_value = mock_df_instance
         mock_job = Mock()
         self.loader.client.load_table_from_dataframe.return_value = mock_job
 
@@ -55,7 +45,6 @@ class TestDataLoader(unittest.TestCase):
 
         # Assert
         self.assertEqual(result, len(test_data))
-        mock_df.assert_called_once_with(test_data)
         self.loader.client.load_table_from_dataframe.assert_called_once()
         mock_job.result.assert_called_once()
 
