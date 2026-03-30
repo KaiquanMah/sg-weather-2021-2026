@@ -33,5 +33,8 @@ if scripts_path not in sys.path:
 ### 4. Updated `.github/workflows/ci.yml`
 Updated the "Install dependencies" step to use `pip install pytest -r requirements.txt`. This ensures all required libraries (like `pytz`, `pyarrow`, `pyyaml`, etc.) are present in the GitHub Actions environment.
 
+### 5. Fixed `Mock` Subscripting in `test_loaders.py`
+Changed `Mock()` to `MagicMock()` for DataFrame mocks in `test_load_to_bigquery`. Standard `Mock` objects are not subscriptable, which caused a `TypeError` when the code tried to access `df['timestamp']`. `MagicMock` correctly supports these operations.
+
 ## Results
-The import structure is now correctly handled by `conftest.py`, and all dependencies are properly installed by the updated CI workflow. This resolves both the `ModuleNotFoundError: No module named 'config'` and the subsequent `ModuleNotFoundError: No module named 'pytz'` errors.
+The unit tests are now fully compatible with the project's import structure and dependencies. By using `conftest.py`, standardizing imports, ensuring all dependencies are in the CI, and fixing mock behavior, all 12 unit tests are set to pass.

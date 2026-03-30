@@ -26,7 +26,7 @@ class TestDataLoader(unittest.TestCase):
         mock_blob = Mock()
         self.loader.storage_client.bucket.return_value = mock_bucket
         mock_bucket.blob.return_value = mock_blob
-        mock_df_instance = Mock()
+        mock_df_instance = MagicMock()
         mock_df.return_value = mock_df_instance
         mock_df_instance.to_parquet.return_value = b"fake_parquet_data"
 
@@ -44,7 +44,7 @@ class TestDataLoader(unittest.TestCase):
     def test_load_to_bigquery(self, mock_df):
         # Arrange
         test_data = [{"timestamp": "2023-01-01T00:00:00", "station_id": "S01", "temperature": 25.0}]
-        mock_df_instance = Mock()
+        mock_df_instance = MagicMock()
         mock_df_instance.columns = ['timestamp', 'station_id', 'temperature', 'ingest_timestamp']
         mock_df.return_value = mock_df_instance
         mock_job = Mock()
