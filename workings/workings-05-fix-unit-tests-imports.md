@@ -30,5 +30,8 @@ if scripts_path not in sys.path:
 - Updated imports to use top-level modules (e.g., `from loaders import ...`).
 - Updated `@patch` decorators to match the new module paths (e.g., `@patch('loaders.pd.DataFrame')`).
 
+### 4. Updated `.github/workflows/ci.yml`
+Updated the "Install dependencies" step to use `pip install pytest -r requirements.txt`. This ensures all required libraries (like `pytz`, `pyarrow`, `pyyaml`, etc.) are present in the GitHub Actions environment.
+
 ## Results
-The tests now correctly find their dependencies without requiring modifications to the source code. This mimics the environment where the scripts are run from within their own directory, ensuring compatibility between production code and tests.
+The import structure is now correctly handled by `conftest.py`, and all dependencies are properly installed by the updated CI workflow. This resolves both the `ModuleNotFoundError: No module named 'config'` and the subsequent `ModuleNotFoundError: No module named 'pytz'` errors.
